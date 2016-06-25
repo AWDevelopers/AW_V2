@@ -51,7 +51,7 @@
 							<p><h2> CIF Ong: </h2></p>
 							<input id="cif" type="text" name="cif" required> (*)</input><div id="Info"></div>
 							<p><h2> Imagen: </h2></p>
-							<input id="file_url" type="file" name="foto"></input>
+							<input id="file_url" type="file" name="foto" required></input>
 							<p> <h2>Fecha de finalizacion: </h2></p>
 							<input type="date" size="20" name="fechaFin"> (*)</input></p>
 							<p><h2> Dinero necesario: </h2></p>
