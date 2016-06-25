@@ -26,7 +26,7 @@
 			//Añado la nueva donacion a la tabla donaciones
 			$consulta = "INSERT INTO donaciones(DNIUsuario, idProyecto, donacion) VALUES ('$dni', '$id', '$dinero')";
 			$connection->query($consulta) or die($connection->error);
-			//echo $dni;
+			
 			//Actualizo el proyecto añadiendo la nueva donacion
 			$consulta2 = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$id'";
 			$connection->query($consulta2) or die($connection->error);

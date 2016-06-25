@@ -1,4 +1,5 @@
 <?php
+	@include ('includes/config.php');
 	use \AW\proyecto\estatica\includes\Aplicacion as App;
 	$app = App::getSingleton();
 	if($app->usuarioLogueado() && $app->tieneRol("Admin")){
