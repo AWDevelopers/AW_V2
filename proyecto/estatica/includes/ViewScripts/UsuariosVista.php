@@ -36,7 +36,7 @@ function muestraUsuarios(){
 						<p>DNI : $DNI </p>
 						<p>Email: $email </p>
 						<p>Usuario: $user </p>
-				  		<form name="vista" action="vistaModificarUsuario.php" method="POST">
+				  		<form name="vista" action="includes/vistaModificarUsuario.php" method="POST">
 				  				<input type="hidden" name="DNI" id="usuario" value="$DNI" /> 
 								<input type="hidden" name="nombre" value="$nombre" />
 								<input type="hidden" name="apellidos"  value="$apellidos" />
@@ -51,9 +51,13 @@ function muestraUsuarios(){
 								<input type="hidden" name="tipo" value="$tipo" />			
 				  				<input name="button" type="submit" value="Modificar"></input>
 						</form>
-						<form>
-				  			<button onclick="eliminarUsuario($num,$DNI)" name="button" type="none" value="eliminar">Eliminar</button>
-				  		</form>
+						
+							<form action = "includes/formEliminaUsuario.php" method = "POST" >
+								<input type = "hidden" name= "DNI" value = "$DNI">
+								<input type = "submit" value = "eliminar">
+							</form>
+				  			
+				  		
 			  		</div> 
 EOS;
 			echo $html;  		
