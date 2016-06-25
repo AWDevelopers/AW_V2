@@ -58,30 +58,50 @@
 		}
 
 		public function insertaProducto($idProducto, $cif, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen){
+			$idProducto= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$cif = htmlspecialchars(trim(strip_tags($cif)));
+        	$stock= htmlspecialchars(trim(strip_tags($stock)));
+        	$precio = htmlspecialchars(trim(strip_tags($precio)));
+        	$nombre= htmlspecialchars(trim(strip_tags($nombre)));
+        	$descripcionCorta= htmlspecialchars(trim(strip_tags($descripcionCorta)));
+        	$descripcionLarga= htmlspecialchars(trim(strip_tags($descripcionLarga)));
+        	$imagen = htmlspecialchars(trim(strip_tags($imagen)));
 			$this->dao->insertaProducto($idProducto, $cif, $stock, $precio, $nombre,$descripcionCorta, $descripcionLarga, $imagen);
 		}
       
         public function modificaNombreProducto($idProducto, $nombre){
+        	$id= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$nombre = htmlspecialchars(trim(strip_tags($nombre)));
         	$this->dao->modificaNombreProducto($idProducto, $nombre);
         }
 		
         public function modificaPrecioProducto($idProducto, $precio){
+        	$id= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$precio = htmlspecialchars(trim(strip_tags($precio)));
         	$this->dao->modificaPrecioProducto($idProducto, $precio);
         }
 
         public function modificaStockProducto($idProducto, $unidades){
+        	$id= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$unidades = htmlspecialchars(trim(strip_tags($unidades)));
         	$this->dao->modificaStockProducto($idProducto, $unidades);
         }
 
         public function modificaNumeroProducto($idProducto, $unidades){
+        	$id= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$unidades = htmlspecialchars(trim(strip_tags($unidades)));
         	$this->dao->modificaNumeroProducto($idProducto, $unidades);
         }
 
         public function modificaDCortaProducto($idProducto, $DCorta){
+        	$id= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$dCorta = htmlspecialchars(trim(strip_tags($dCorta)));
         	$this->dao->modificaDCortaProducto($idProducto, $DCorta);
         }
 
         public function modificaDLargaProducto($idProducto, $DLarga){
+        	$id= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$DLarga = htmlspecialchars(trim(strip_tags($DLarga)));
         	$this->dao->modificaDLargaProducto($idProducto, $DLarga);
         }
 

@@ -136,13 +136,7 @@
 			$con->query($sql);
 		}
 		
-		public function eliminarUsuario($dni){
-			$app = App::getSingleton();
-			$con = $app->conexionBd();
-			$sql = "DELETE usuario WHERE DNI='$dni'";
-			$con->query($sql);
 		
-		}
 	}
 
 ?>

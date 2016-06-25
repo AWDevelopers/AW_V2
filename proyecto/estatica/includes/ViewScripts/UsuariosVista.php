@@ -36,7 +36,7 @@ function muestraUsuarios(){
 						<p>DNI : $DNI </p>
 						<p>Email: $email </p>
 						<p>Usuario: $user </p>
-				  		<form name="vista" action="includes/vistaModificarUsuario.php" method="POST">
+				  		<form name="vista" action="vistaModificarUsuario.php" method="POST">
 				  				<input type="hidden" name="DNI" id="usuario" value="$DNI" /> 
 								<input type="hidden" name="nombre" value="$nombre" />
 								<input type="hidden" name="apellidos"  value="$apellidos" />
