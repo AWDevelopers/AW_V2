@@ -20,7 +20,7 @@ switch($funcion){
 		break;
 
 	case 'ELEGIRMODIFICAR':
-		header("Location: ../vistaAdminProductos.php?idProducto=".$_POST['elijoEste']);
+		header("Location: ../modificarProducto.php?idProducto=".$_POST['elijoEste']);
 		exit();
 		break;
 	

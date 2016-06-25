@@ -14,7 +14,7 @@ $producto = new GestorProductos();
 		$producto->modificaDLargaProducto($_POST['idProducto'], $_POST['DLARGA']);
 	
 		$producto->modificaNumeroProducto($_POST['idProducto'], $_POST['STOCK']);
-		header("Location: ../formAdminProductos.php");
+		header("Location: ../vistaAdminProductos.php");
 	
 
 ?>

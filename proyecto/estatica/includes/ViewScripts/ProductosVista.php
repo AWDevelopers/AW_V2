@@ -156,7 +156,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 				  		
 				  		//MOSTRAR PRODUCTO
 				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
-				  			<input  type = "hidden" name =idProducto value="'.$iterator->current()->getIdProducto().'"> 
+				  			<input  type = "hidden" name="idProducto" id="producto" value="'.$producto->getIdProducto().'"> 
 			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
 
 			  				echo "<p> Unidades:  </p>";
@@ -188,7 +188,6 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 				  		//echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
 				  		
 				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
-				  			<input  type = "hidden" name =idProducto value="'.$iterator->current()->getIdProducto().'"> 
 			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
 
 			  				echo "<p> Unidades:  </p>";
@@ -216,24 +215,21 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
     		echo '<p><img src="'.$producto->getImagen().'" /></p>';
 
     		if($app->usuarioLogueado()){
-    			/*if($app->nombreUsuario()!= $user){
-    				echo '<p>Debes ser el propietario de este producto para modificarlo.</p>';
-    			}else{*/
     				echo '<form method = "POST" action = "includes/formModificaProducto.php">';
-					echo '<p>Nombre del producto: </p>';
-					echo '<input type = "hidden" name = "idProducto" value = "'.$producto->getIdProducto().'">';
-					echo ' <input type = "text" name= "NOMBRE" value ="'.$producto->getNombreProducto().'"> ';
-					echo '<p>Precio del producto:</p>';
-					echo '  <input type = "text"  name= "PRECIO" value ="'.$producto->getPrecioProducto().'"> ';
-					echo '<p>Descripción corta del producto: </p>';
-					echo '  <textarea name= "DCORTA" rows="4" cols="40">'.$producto->getDescCortaProducto().'</textarea> ';
-					echo '<p>Descripción larga del producto: </p>';
-					echo '  <textarea  rows="10" cols="40" name= "DLARGA">'.$producto->getDescLargaProducto().'</textarea> ';
-					echo '<p>Stock </p>';
-					echo '  <input type = "text" name= "STOCK" value ="'.$producto->getstockProducto().'">';
-					echo ' <input type= "submit" value = "MODIFICAR"></p>';
+						echo '<p>Nombre del producto: </p>';
+						echo '<input type = "hidden" name = "idProducto" value = "'.$producto->getIdProducto().'">';
+						echo ' <input type = "text" name= "NOMBRE" value ="'.$producto->getNombreProducto().'"> ';
+						echo '<p>Precio del producto:</p>';
+						echo '  <input type = "text"  name= "PRECIO" value ="'.$producto->getPrecioProducto().'"> ';
+						echo '<p>Descripción corta del producto: </p>';
+						echo '  <textarea name= "DCORTA" rows="4" cols="40">'.$producto->getDescCortaProducto().'</textarea> ';
+						echo '<p>Descripción larga del producto: </p>';
+						echo '  <textarea  rows="10" cols="40" name= "DLARGA">'.$producto->getDescLargaProducto().'</textarea> ';
+						echo '<p>Stock </p>';
+						echo '  <input type = "text" name= "STOCK" value ="'.$producto->getstockProducto().'">';
+						echo ' <input type= "submit" value = "MODIFICAR"></p>';
 				echo '</form>';
-    			//}
+    			
     		}else{
     			echo ' <p>Debes estar <a href="registrate.php">registrado</a> o en tu <a href="login.php">cuenta de usuario</a> para modificar.</p>';
     		}
