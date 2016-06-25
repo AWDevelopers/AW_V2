@@ -61,16 +61,14 @@ EOS;
                 $dia= $iterator->current()->getDia();
                 $horaEntrada= $iterator->current()->getHoraEntrada();
                 $horaSalida= $iterator->current()->getHoraSalida();
-                $id = $iterator->current()->getIdProyecto();
+                $id = $iterator->current()->getIdVoluntariado();
                     $html = <<<EOS
-                        <div class="noticiaAdmin">
+                        <div id = "$id" class="noticiaAdmin">
                             <h3> Usuario: $dni </h3>
                             <p>Dia: $dia</p>
                             <p>$horaEntrada - $horaSalida</p>
-                            <form name="vista" action="includes/formAdminMuestraVoluntariosProyecto.php" method="POST">
                                 <input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
-                                <input name="button" type="submit" value="Ver voluntarios"/>
-                            </form>
+                                <button onCLick="eliminarVoluntariado($id)" name="button" type="submit" value="Eliminar">Eliminar</button>
                         </div> 
 EOS;
             echo $html; 

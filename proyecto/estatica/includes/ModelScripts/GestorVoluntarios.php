@@ -13,7 +13,7 @@
 			$lista = $this->dao->listaVoluntarios();
 			$array = new ArrayObject();
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){
-			$array->append(new voluntario($lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));			
+			$array->append(new voluntario($lista[$j]['idVoluntariado'],$lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));		
 			}
 			return $array;
 			
@@ -37,13 +37,17 @@
 			return null;
 		}
 
+		public function eliminaVoluntario($idVol){
+			return ($this->dao->borraVoluntario($idVol));
+		}
+
 		public function getVoluntarios($idProyecto){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
 			htmlspecialchars(trim(strip_tags($idProyecto)));
 			$lista = $this->dao->seleccionaVoluntarios($idProyecto);
 			$array = new ArrayObject();
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){
-			$array->append(new voluntario($lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));			
+			$array->append(new voluntario($lista[$j]['idVoluntariado'],$lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));			
 			}
 			return $array;
 		}
@@ -54,7 +58,7 @@
 			$lista  = $this->dao->seleccionaVoluntariosONG($cifOng);
 			$array = new ArrayObject();
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){
-			$array->append(new voluntario($lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));			
+			$array->append(new voluntario($lista[$j]['idVoluntariado'],$lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));
 			}
 			return $array;
 		}
@@ -65,7 +69,7 @@
 			$lista = $this->dao->seleccionaVoluntariosUsuario($dni);
 			$array = new ArrayObject();
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){
-			$array->append(new voluntario($lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));			
+			$array->append(new voluntario($lista[$j]['idVoluntariado'],$lista[$j]['idProyecto'], $lista[$j]['DNIUsuario'], $lista[$j]['dia'], $lista[$j]['horaEntrada'], $lista[$j]['horaSalida']));		
 			}
 			return $array;
 		}

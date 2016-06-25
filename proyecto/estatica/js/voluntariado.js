@@ -47,3 +47,17 @@
                     });
                 }
             }
+
+            function eliminarVoluntariado(idVol){
+                var div = document.getElementById(idVol);
+                var dataString = 'id='+idVol;
+                $.ajax({
+                        type: "POST",
+                        url: "includes/formEliminaVoluntariado.php",
+                        data: dataString,
+                        success: function(data) {
+                            
+                        }
+                    });
+                div.innerHTML = "";
+            }  
