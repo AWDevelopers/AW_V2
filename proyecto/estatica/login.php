@@ -26,8 +26,6 @@
 						<input type="password" name="pass" placeholder= "Contraseña" required> (*)</input></p>
 						
 						
-						
-						<a href="olvidarPass.php"><p><h3>Olvidaste la contraseña</h3></p></a>
 						<input type="submit" name="submit" value="Login">
 					</form>
 					
