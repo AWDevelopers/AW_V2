@@ -16,7 +16,7 @@ require_once 'ModelScripts/GestorNoticias.php';
 		header("Location: ../vistaNoticiaDetallada.php?id=".$id);
 	}
 	else{
-		header("Location: ../index.php);
+		header("Location: ../index.php");
 	}
 	
 ?>

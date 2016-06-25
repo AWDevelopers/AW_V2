@@ -55,8 +55,8 @@ EOS;
 
         function muestraVoluntariosProyecto($idProyecto){
             $lista = $this->gestorVoluntarios->getVoluntarios($idProyecto);
-            $iterator= $lista->getIterator();
-            while($iterator->valid()) {
+            $iterator = $lista->getIterator();
+            while($iterator->valid()){
                 $dni= $iterator->current()->getDniUsuario();
                 $dia= $iterator->current()->getDia();
                 $horaEntrada= $iterator->current()->getHoraEntrada();
