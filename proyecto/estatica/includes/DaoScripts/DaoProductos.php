@@ -154,6 +154,15 @@
 			
 		}
 
+		function modificaImagenProducto($idProducto, $imagen){
+			$app = App::getSingleton();
+    		$con = $app->conexionBd();
+			$sql =  "UPDATE producto SET imagen = '$imagen' WHERE idProducto = '$idProducto'";
+			$con->query($sql) or die ($con->error);
+			
+		}
+
+
 		public function listaOngs(){
 			$app = App::getSingleton();
             $con = $app->conexionBd();

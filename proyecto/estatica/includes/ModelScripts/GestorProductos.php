@@ -95,7 +95,7 @@
 
         public function modificaDCortaProducto($idProducto, $DCorta){
         	$id= htmlspecialchars(trim(strip_tags($idProducto)));
-        	$dCorta = htmlspecialchars(trim(strip_tags($dCorta)));
+        	$DCorta = htmlspecialchars(trim(strip_tags($DCorta)));
         	$this->dao->modificaDCortaProducto($idProducto, $DCorta);
         }
 
@@ -105,6 +105,11 @@
         	$this->dao->modificaDLargaProducto($idProducto, $DLarga);
         }
 
+         public function modificaImagenProducto($idProducto, $imagen){
+        	$id= htmlspecialchars(trim(strip_tags($idProducto)));
+        	$imagen = "img/".htmlspecialchars(trim(strip_tags($imagen)));
+        	$this->dao->modificaImagenProducto($idProducto, $imagen);
+        }
         
 	}
 

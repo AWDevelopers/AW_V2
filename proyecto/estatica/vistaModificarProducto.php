@@ -23,7 +23,7 @@
 						<p><h2>Precio del producto:</h2></p>
 						<input type = "text"  name= "precio" value ="<?= $_REQUEST['precio']?>">
 						<p><h2>Descripción corta del producto:</h2> </p>
-						<textarea name= "descripcionCorta" rows="4" cols="40" value="<?= $_REQUEST['desc']?>"></textarea> 
+						<textarea name= "descripcionCorta" rows="4" cols="40" value="<?php $_REQUEST['desc']?>"></textarea> 
 						<p><h2>Descripción larga del producto:</h2> </p>
 						<textarea  rows="10" cols="40" name= "descripcionLarga" value="<?= $_REQUEST['desl']?>"></textarea> 
 						<p><h2>Stock</h2> </p>

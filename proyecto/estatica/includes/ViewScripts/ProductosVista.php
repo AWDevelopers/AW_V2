@@ -144,69 +144,6 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 	  	
 		}
 
-		function eligeBorrarProducto(){
-			$lista = $this->ListaProductos->cargarDatosProductoPorNombre();
-			
-			$iterator = $lista->getIterator(); 
-
-			while($iterator->valid()) {
-			  		echo "<div class='producto'> ";
-				  		echo "<h1>" . $iterator->current()->getNombreProducto() . "</h1>";
-				  		//echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
-				  		
-				  		//MOSTRAR PRODUCTO
-				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
-				  			<input  type = "hidden" name="idProducto" id="producto" value="'.$producto->getIdProducto().'"> 
-			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
-
-			  				echo "<p> Unidades:  </p>";
-			  				echo "<select id='unidades' name ='unidades'>";
-				  				for($i =1; $i <= $iterator->current()->getstockProducto(); $i++){
-				  					echo "<option value = '".$i."'>".$i."</option>";	
-				  				}
-				  			echo "</select>";
-
-		  					echo ' <INPUT type="radio" name="elijoEste" value="'.$iterator->current()->getIdProducto().'">';		
-										  			
-				  	echo "</div>";
-			    $iterator->next();
-			}			
-			echo '<input type = "submit" name = "producto" value = "BORRAR" >';
-			echo '</form>';
-								 	
-		}
-
-		
-		function eligeModificarProducto(){
-			$lista = $this->ListaProductos->cargarDatosProductoPorNombre();
-			
-			$iterator = $lista->getIterator(); 
-
-			while($iterator->valid()) {
-			  		echo "<div class='producto'> ";
-				  		echo "<h1>" . $iterator->current()->getNombreProducto() . "</h1>";
-				  		//echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
-				  		
-				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
-			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
-
-			  				echo "<p> Unidades:  </p>";
-			  				echo "<select id='unidades' name ='unidades'>";
-				  				for($i =1; $i <= $iterator->current()->getstockProducto(); $i++){
-				  					echo "<option value = '".$i."'>".$i."</option>";	
-				  				}
-				  			echo "</select>";
-
-		  					echo ' <INPUT type="radio" name="elijoEste" value="'.$iterator->current()->getIdProducto().'">';		
-										  			
-				  	echo "</div>";
-			    $iterator->next();
-			}			
-			echo '<input type = "submit" name = "producto" value = "ELEGIRMODIFICAR" >';
-			echo '</form>';
-								 	
-		}
-
 		function muestraModificarProducto($id){
 			$producto = $this->ListaProductos->getProducto($id);
 			$app = App::getSingleton();
@@ -227,6 +164,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 						echo '  <textarea  rows="10" cols="40" name= "DLARGA">'.$producto->getDescLargaProducto().'</textarea> ';
 						echo '<p>Stock </p>';
 						echo '  <input type = "text" name= "STOCK" value ="'.$producto->getstockProducto().'">';
+						echo '<input id="file_url" type="file" name="IMAGEN"> (*)</input>';
 						echo ' <input type= "submit" value = "MODIFICAR"></p>';
 				echo '</form>';
     			
@@ -280,45 +218,7 @@ EOS;
 			}	 	
 		}
 
-		public function muestraInsertarProd(){
-			require_once '/../ModelScripts/GestorOngs.php';
-			$listaOngs = new GestorOngs();
-
-			$lista = $listaOngs->getLista();
-            $iterator = $lista->getIterator();
-			
-
-              	echo'
-          		<form action="includes/formInsertarProducto.php" method="POST">
-				  <p>Nombre del producto
-				  	<input type="text" name="NOMBRE" required></input></p>
-
-				  <p>Cif
-					<select name = "CIF">';
-						
-						while($iterator->valid()) {
-							
-							echo "<option value=".$iterator->current()->getCif().">".$iterator->current()->getCif()."</option>";
-							  $iterator->next();
-						}
-
-				echo '
-					</select>
-				<p>Precio
-			  	
-			  		<input type="text" name="PRECIO"></input> </p>
-				  <p>Descripción corta
-					<input type="text" name="DCORTA" required></input></p>
-				  <p>Descripción larga
-					<input type="text" name="DLARGA" required></input></p>
-				  <p>Número de unidades
-					<input type="text" name="STOCK" required></input></p>
-				  <p>Imagen
-				  <input id="file_url" type="file" name="IMAGEN"> (*)</input>
-				  <p><input type="submit" ></p>
-				  </form>';
-
-		}	 	
+		
 		
 		
 	}

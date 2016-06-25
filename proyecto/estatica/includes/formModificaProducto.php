@@ -12,11 +12,13 @@
 			$descripcionCorta = $_REQUEST['descripcionCorta'];
 			$descripcionLarga = $_REQUEST['descripcionLarga'];
 			$stock = $_REQUEST['stock'];
+			$imagen = $_REQUEST['imagen'];
 			$producto->modificaNombreProducto($idProducto,$nombre);
 			$producto->modificaPrecioProducto($idProducto,$precio);
 			$producto->modificaDCortaProducto($idProducto,$descripcionCorta);
 			$producto->modificaDLargaProducto($idProducto,$descripcionLarga );
 			$producto->modificaNumeroProducto($idProducto, $stock );
+			$producto->modificaImagenProducto($idProducto, $imagen );
 		header("Location: ../vistaAdminProductos.php");
 		exit();
 		}
