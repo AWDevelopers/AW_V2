@@ -14,7 +14,6 @@
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);	
 			}
 		}
@@ -29,7 +28,6 @@
 			{
 				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				$con->close();
 				return ($lista);	
 			}
 		}
@@ -41,7 +39,6 @@
 			$sql.= "('".$idProyecto."', '".$dniUsuario."', '".$dia."', '".$horaEntrada."', '".$horaSalida."')";
 			$con->query($sql) or die ($con->error);
 			$num = $con->insert_id;
-			$con->close();
 			return ($num);
 		}
 
@@ -50,7 +47,6 @@
     		$con = $app->conexionBd();
 			$sql = "DELETE FROM voluntarios WHERE idVoluntariado = '$idVol'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		function modificarHoraEntrada($horaEntrada, $idVol){
@@ -58,7 +54,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE FROM voluntarios SET (horaEntrada = '$horaEntrada') WHERE idVoluntariado = '$idVol'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		function modificarHoraSalida($horaSalida, $idVol){
@@ -66,7 +61,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE FROM voluntarios SET (horaSalida = '$horaSalida') WHERE idVoluntariado = '$idVol'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		function modificarDia($dia, $idVol){
@@ -74,7 +68,6 @@
     		$con = $app->conexionBd();
 			$sql = "UPDATE FROM voluntarios SET (dia = '$dia') WHERE idVoluntariado = '$idVol'";
 			$con->query($sql) or die ($con->error);
-			$con->close();
 		}
 
 		function seleccionaVoluntarios($idProyecto){
@@ -89,7 +82,6 @@
 					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
 				}
 				$rs->free();
-				$con->close();
 				return ($resultado);
 			}
 		}
@@ -107,7 +99,6 @@
 					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
 				}
 				$rs->free();
-				$con->close();
 				return ($resultado);
 			}
 		}
@@ -124,7 +115,6 @@
 					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
 				}
 				$rs->free();
-				$con->close();
 				return ($resultado);
 			}
 		}

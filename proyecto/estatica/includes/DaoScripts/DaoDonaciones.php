@@ -6,17 +6,16 @@
 		private $array;
 
 		public function listaDonaciones(){
-			$array = new ArrayOnject();
-			$con = createConnection();
+			$app = App::getSingleton();
+            $con = $app->conexionBd();
 			$consulta = "SELECT * FROM donaciones";
-			$resultado = $con->query($consulta) or die ($con->error);
+			$rs = $con->query($consulta) or die ($con->error);
 
 			if($rs != NULL){
-				while($lista = $resultado->fetch_assoc()){
+				while($lista = $rs->fetch_assoc()){
 					$array->append(new Donaciones($lista['donaciones_id'], $lista['DNIUsuario'], $lista['idProyecto'], $lista['donacion']));
 				}
-				mysqli_free_result($resultado);
-				closeConection($con);
+				$rs->free();
 				return $array;
 			}
 		}
@@ -32,14 +31,12 @@
 			$consulta2 = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$id'";
 			$connection->query($consulta2) or die($connection->error);
 			//$rs->free();
-			$connection->close();
 		}
 
 		public function borraDonacion($id){
 			$con = createConnection();
 			$consulta = "DELETE FROM donaciones WHERE idProyecto = '$id'";
 			$con->query($consulta) or die ($con->error);
-			closeConecction();
 		}
 	}
 ?>
