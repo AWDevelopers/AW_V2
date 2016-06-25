@@ -45,7 +45,7 @@
 						
 						<p> <h2>Usuario: </h2></p>
 						<input type="text" size="20" name="usuario" placeholder= "CarlitaRH" required> (*)</input> 
-						<p> <h2>Contraseña: </h2></p>
+						<p> <h2>Contraseña: (más de 6 dígitos) </h2></p>
 						<input type="password" size="20" name="pass"  placeholder= "ej. 7gt5re2" required> (*)</input> 
 						<p> <h2>Nombre: </h2></p>
 						<input type="text" size="20" name="nombre" placeholder= "Carla " required> (*)</input>
