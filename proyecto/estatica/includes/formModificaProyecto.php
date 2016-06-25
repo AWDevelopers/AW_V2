@@ -12,6 +12,6 @@ $lista = new GestorProyectos();
 	$fechaFin = $_REQUEST['fechaFin'];
 	#$rol = $_SESSION['rol'];
 	$lista->modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin);
-	header("Location: ../formAdminProyectos.php);
+	header("Location: ../vistaAdminProyectos.php");
 
 ?>

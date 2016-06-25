@@ -17,7 +17,7 @@
 			<div class = "panelNoticias">
 				<div class="atrasYAniade">
 					<div class="atras">
-				<form action="formAdminVoluntarios.php"><input type="submit" value="Atras"></input></form>	
+				<form action="vistaAdminVoluntarios.php"><input type="submit" value="Atras"></input></form>	
 					</div>
 				</div>			
 				<?php 
