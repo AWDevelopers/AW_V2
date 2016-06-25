@@ -13,5 +13,4 @@ $lista = new GestorProyectos();
 	#$rol = $_SESSION['rol'];
 	$lista->modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin);
 	header("Location: ../vistaAdminProyectos.php");
-
 ?>

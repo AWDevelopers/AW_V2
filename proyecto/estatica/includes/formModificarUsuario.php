@@ -19,7 +19,7 @@ require_once 'ModelScripts/GestorUsuarios.php';
 			$usuario = $_REQUEST['usuario'];
 			$fecha = $_REQUEST['fechaNacimiento'];
 			$lista->modificarPerfilUser($dni, $nombre, $apellidos, $email, $telefono, $direccion, $cp, $tipo, $avatar, $sexo, $usuario, $fecha);
-			header("Location: ../formAdminUsuarios.php");
+			header("Location: ../vistaAdminUsuarios.php");
 			exit();
 	}
 

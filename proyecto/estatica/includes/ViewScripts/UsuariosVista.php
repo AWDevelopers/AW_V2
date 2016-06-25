@@ -51,9 +51,9 @@ function muestraUsuarios(){
 								<input type="hidden" name="tipo" value="$tipo" />			
 				  				<input name="button" type="submit" value="Modificar"></input>
 						</form>
-						<p>
-				  			<button onclick="eliminaUsuario($num,$DNI)" name="button" type="none" value="eliminar">Eliminar</button>
-				  		</p>
+						<form>
+				  			<button onclick="eliminarUsuario($num,$DNI)" name="button" type="none" value="eliminar">Eliminar</button>
+				  		</form>
 			  		</div> 
 EOS;
 			echo $html;  		
@@ -61,8 +61,6 @@ EOS;
 			$num++;
 		}		 	
 	}
-
-	
 	function perfilUsuario($dni){
 		$datosUsuario = $this->ListaUsuarios->getUsuario($dni);
 		$nombre = $datosUsuario->getNombre();

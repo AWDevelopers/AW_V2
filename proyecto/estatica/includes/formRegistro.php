@@ -16,7 +16,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 	$telefono = $_REQUEST['tlf'];
 	$direccion = $_REQUEST['direccion'];
 	$cp = $_REQUEST['cp'];
-	if($app->usuarioLogueado() && $app->esAdmin("Admin")){
+	if($app->usuarioLogueado() && $app->tieneRol("Admin")){
 		$tipo = $_REQUEST['tipo'];
 	}
 	else{
@@ -25,8 +25,13 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 	$avatar = "img/".$_REQUEST['foto'];
 	$salida = $lista->nuevoUsuario($user, $pass, $nombre, $apellidos, $dni, $email, $fechaNacimiento, $sexo, $telefono, $direccion, $cp, $avatar, $tipo);
 	if ($salida){ //Se ha hecho el registro correctamente
-		header("Location: ../index.php");
-		echo "Se ha registrado";
+		if($app->tieneRol("Admin")){
+			header("Location: ../vistaAdminUsuarios.php");
+		}else{
+			header("Location: ../index.php");
+			echo "Se ha registrado";
+		}
+		
 	}
 	else{
 		echo "No se ha registrado";

@@ -89,7 +89,7 @@ require_once '/../DaoScripts/DAOUsuarios.php';
 		
 		public function eliminarUsuario($dni){
 			$dniN = htmlspecialchars(trim(strip_tags($dni)));
-			return $this->dao->borraUsuario($dniN);
+			$this->dao->borraUsuario($dniN);
 		}
 		
 		public function getUsuario($dni){
