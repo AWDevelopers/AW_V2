@@ -156,6 +156,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 				  		
 				  		//MOSTRAR PRODUCTO
 				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
+				  			<input  type = "hidden" name =idProducto value="'.$iterator->current()->getIdProducto().'"> 
 			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
 
 			  				echo "<p> Unidades:  </p>";
@@ -187,6 +188,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 				  		//echo "<h3>".$iterator->current()->getNombreONGProducto()."</h3>";
 				  		
 				  		echo '<form name = "borraProducto" action = "includes/formProductos.php" method = "POST">
+				  			<input  type = "hidden" name =idProducto value="'.$iterator->current()->getIdProducto().'"> 
 			  				<input type="image" id = "imagenProducto" name = "producto" value="MUESTRA" src="'.$iterator->current()->getImagen().'" alt = "submit">';
 
 			  				echo "<p> Unidades:  </p>";
