@@ -242,14 +242,40 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
             $iterator = $lista->getIterator();
                		
 			while($iterator->valid()) {
+				$id= $iterator->current()->getIdProducto();
                 $nombre = $iterator->current()->getNombreProducto();
                 $imagen = $iterator->current()->getImagen();
                 $stock = $iterator->current()->getstockProducto();
-                echo'<div class="principal">
-	                    <h2>'. $nombre .'</h2>
-	                    <img src="'.$imagen.'"/>
-                    </div>';
- 		
+                $precio = $iterator->current()->getPrecioProducto();
+                $imagen = $iterator->current()->getImagen();
+                $desl= $iterator->current()->getDescLargaProducto();
+                $desc= $iterator->current()->getDescCortaProducto();
+
+                $html = <<<EOS
+                                 <div class="noticiaAdmin" id="noticiaAdmin">
+                                    <h3> $nombre </h3>
+                                    <p> stock: $stock </p>
+                                    <p>Precio: $precio</p>
+                                   
+                                   <form name="vista" action="vistaModificarProducto.php" method="POST">
+										<input type="hidden" name="id"  value="$id"/>
+										<input type="hidden" name="imagen"  value="$imagen"/>
+										<input type="hidden" name="nombre"  value="$nombre"/>
+										<input type="hidden" name="precio"  value="$precio"/>
+										<input type="hidden" name="desc"  value="$desl"/>
+										<input type="hidden" name="stock"  value="$stock"/>
+										<input name="button" type="submit" value="Modificar" />
+								   </form>
+								   <form action="includes/formEliminaProducto.php" method="POST">
+								   		<input type="hidden" name="id"  value="$id"/>
+										<input name="eliminar" type="submit" value="eliminar"/>
+										
+								   </form>
+										
+								
+                                </div>
+EOS;
+ 			echo $html; 
 		    $iterator->next();
 			}	 	
 		}
