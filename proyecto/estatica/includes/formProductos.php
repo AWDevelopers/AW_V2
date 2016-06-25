@@ -15,12 +15,12 @@ switch($funcion){
 	case 'BORRAR':
 		$idProducto = $_POST['elijoEste'];
 		$producto->borrarProducto($idProducto);
-		header("Location: ../formAdminProductos.php");
+		header("Location: ../vistaAdminProductos.php");
 		exit();
 		break;
 
 	case 'ELEGIRMODIFICAR':
-		header("Location: ../modificarProducto.php?idProducto=".$_POST['elijoEste']);
+		header("Location: ../vistaAdminProductos.php?idProducto=".$_POST['elijoEste']);
 		exit();
 		break;
 	

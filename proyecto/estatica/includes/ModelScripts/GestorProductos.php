@@ -1,5 +1,5 @@
 <?php
-	require_once '/../DaoScripts/DaoProductos.php';
+	require_once 'includes/DaoScripts/DaoProductos.php';
 	class GestorProductos{
 		private $dao;
 		function __construct(){
@@ -31,7 +31,7 @@
 			$lista = $dao->cargarDatosProductoPorPrecioMayor();
 			$array = new ArrayObject();
 			for($i= 0; $i <(sizeof($lista)-1) ; $i++){
-				$
+				
 				$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['CIFOng'],$lista[$i]['stock'],$lista[$i]['precio'],$lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen']));
 			}
 			return $array;
@@ -85,15 +85,7 @@
         	$this->dao->modificaDLargaProducto($idProducto, $DLarga);
         }
 
-        public function getLista(){
-			$dao = new DaoProductos();
-			$lista = $dao->listaProductos();
-			$array = new ArrayObject();
-			for($i= 0; $i <sizeof($lista)-1 ; $i++){
-			$array->append(new Producto($lista[$i]['idProducto'], $lista[$i]['stock'],$lista[$i]['precio'], $lista[$i]['nombre'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'],$lista[$i]['CIFOng'], $lista[$i]['imagen']));
-			}
-			return $array;
-		}
+        
 	}
 
 ?>
