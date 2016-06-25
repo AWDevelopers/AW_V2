@@ -13,13 +13,11 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-			<div id="proyectoONG">
 				<?php
 					require_once "includes/ViewScripts/OngsVista.php";
 					$vOng= new vistaOng();
 					$vOng->muestraInsertarOng();
 				?>
-			</div>
 		</div>
 	</div>
 </body>

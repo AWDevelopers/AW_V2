@@ -210,22 +210,27 @@
 
 			echo '<div class="formulario">';
 			echo '<form method="POST">
-				  <p>CIF de la Ong
-				  	<input type="text" name="CIF" required></input></p>
-				  <p>Nombre de la Ong
-				  	<input type="text" name="nombre" required></input></p>
-				  <p>Dirección
-				  	<input type="text" name="direccion"></input> </p>
-				  <p>Email de contacto
-					<input type="text" name="email" required></input></p>
-				  <p>Usuario
-					<input type="text" name="usuario" required></input></p>
-				  <p>Contraseña
-					<input type="text" name="pass" required></input></p>
-				  <p>Teléfono de contacto
-					<input type="text" name="telefono"></input></p>
-				  <p><input type="submit" name="add" value="Dar de alta Ong"></p>
-				  </form>';
+					<div class="contenido2">
+					<div id="formulariosTitulo"><p><h1> Formulario para una nueva ONG</h1></p></div>
+				  <p><h2>CIF de la Ong</h2></p>
+				  	<input type="text" name="CIF" required> *</input>
+				  <p><h2>Nombre de la Ong</h2></p>
+				  	<input type="text" name="nombre" required> *</input>
+				  <p><h2>Dirección</h2></p>
+				  	<input type="text" name="direccion"> *</input> 
+				  <p><h2>Email de contacto</h2></p>
+					<input type="text" name="email" required> *</input>
+				  <p><h2>Usuario</h2></p>
+					<input type="text" name="usuario" required> *</input>
+				  <p><h2>Contraseña</h2></p>
+					<input type="text" name="pass" required> *</input>
+				  <p><h2>Teléfono de contacto</h2></p>
+					<input type="text" name="telefono"></input>
+				  <p><input type="submit" name="add" value="Dar de alta Ong"/></p>
+				  </div>
+				  <div>
+				  </form>
+				  </div>';
 			echo '</div>';
 			$this->insertarOng();
 		}
