@@ -75,15 +75,13 @@
     		$con = $app->conexionBd();
 			$sql = "SELECT * FROM voluntarios WHERE idProyecto = '$idProyecto'";
 			$rs = $con->query($sql) or die ($con->error);
-			$resultado = "";
+			$lista = "";
 			if($rs != NULL)
 			{
-				while($lista = $rs->fetch_assoc()){
-					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
-				}
+				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				return ($resultado);
 			}
+			return ($lista);
 		}
 
 
@@ -92,15 +90,13 @@
     		$con = $app->conexionBd();
 			$sql = "SELECT * FROM voluntarios v JOIN proyecto p WHERE 'p.CIFOng = '$cifOng'";
 			$rs = $con->query($sql) or die ($con->error);
-			$resultado = "";
+			$lista = "";
 			if($rs != NULL)
 			{
-				while($lista = $rs->fetch_assoc()){
-					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
-				}
+				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				return ($resultado);
 			}
+			return ($lista);
 		}
 		
 		function seleccionaVoluntariosUsuario($dniUsuario){
@@ -109,14 +105,13 @@
 			$sql = "SELECT * FROM voluntarios WHERE DNIUsuario = '$dniUsuario'";
 			$rs = $con->query($sql) or die ($con->error);
 			$resultado = "";
+			$lista = "";
 			if($rs != NULL)
 			{
-				while($lista = $rs->fetch_assoc()){
-					$resultado =  new Voluntario($lista['idProyecto'], $lista['DNIUsuario'], $lista['dia'], $lista['horaEntrada'], $lista['horaSalida']);
-				}
+				while($lista[] = $rs->fetch_assoc());
 				$rs->free();
-				return ($resultado);
 			}
+			return ($lista);
 		}
 	}
 

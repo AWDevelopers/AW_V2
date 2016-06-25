@@ -61,6 +61,7 @@ EOS;
                 $dia= $iterator->current()->getDia();
                 $horaEntrada= $iterator->current()->getHoraEntrada();
                 $horaSalida= $iterator->current()->getHoraSalida();
+                $id = $iterator->current()->getIdProyecto();
                     $html = <<<EOS
                         <div class="noticiaAdmin">
                             <h3> Usuario: $dni </h3>
@@ -72,7 +73,8 @@ EOS;
                             </form>
                         </div> 
 EOS;
-            echo $html;  
+            echo $html; 
+            $iterator->next(); 
         }
 
 
