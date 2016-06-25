@@ -63,9 +63,9 @@
 			if($imagen == "img/")
 				$imagen += "imagen.png";
 			if($end_time > $cur_time){
-				//if($daoO->seleccionaOng($cif) != ""){
-					return ($this->dao->insertaProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$dineroAcumulado,$fechaFin));
-				//}
+				if($daoO->seleccionaOng($cif) != ""){
+					return ($this->dao->insertaProyecto($nombre,$cif,$dineroNecesario,$dineroAcumulado,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$fechaFin));
+				}
 			}
 			return null;
 		}

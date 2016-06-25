@@ -1,5 +1,5 @@
 <?php
-	require_once 'includes/DaoScripts/DaoOngs.php';
+	require_once '/../DaoScripts/DaoOngs.php';
 	class GestorOngs{
 
 		private $daoOngs;

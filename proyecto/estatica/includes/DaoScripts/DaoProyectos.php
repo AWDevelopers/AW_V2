@@ -26,7 +26,7 @@
 			$con->query($sql) or die ($con->error);
 		}
 
-		function insertaProyecto($nombre,$cif,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios,$dineroAcumulado, $fechaFin){
+		function insertaProyecto($nombre,$cif,$dineroNecesario,$dineroAcumulado,$descripcionCorta,$descripcionLarga,$imagen, $numVoluntarios, $fechaFin){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
 			$sql = "INSERT INTO proyecto(CIFOng, fechaCreacion, dineroNecesario, dineroAcumulado, nombre, descripcionLarga, descripcionCorta, imagen, numVoluntarios, fechaFin) VALUES ";

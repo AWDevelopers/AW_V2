@@ -4,7 +4,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 require_once 'ModelScripts/GestorProyectos.php';
 $app = App::getSingleton();
 if($app->usuarioLogueado() && $app->tieneRol("Admin", "Error", "No tienes permisos")){
-$lista = new GestorProyectos();
+	$lista = new GestorProyectos();
 	$nombre = $_REQUEST['nombre'];
 	$cif = $_REQUEST['cif'];
 	$dineroNecesario = $_REQUEST['dinero'];
