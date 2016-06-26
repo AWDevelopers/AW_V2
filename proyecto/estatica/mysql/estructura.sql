@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-06-2016 a las 20:05:47
+-- Tiempo de generación: 26-06-2016 a las 12:22:22
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `incommong`
 --
-CREATE DATABASE IF NOT EXISTS `incommong` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `incommong`;
 
 -- --------------------------------------------------------
 
@@ -28,7 +26,6 @@ USE `incommong`;
 -- Estructura de tabla para la tabla `compras`
 --
 
-DROP TABLE IF EXISTS `compras`;
 CREATE TABLE `compras` (
   `idProducto` int(10) NOT NULL,
   `CIFOng` varchar(9) NOT NULL,
@@ -42,7 +39,6 @@ CREATE TABLE `compras` (
 -- Estructura de tabla para la tabla `donaciones`
 --
 
-DROP TABLE IF EXISTS `donaciones`;
 CREATE TABLE `donaciones` (
   `donaciones_id` bigint(20) NOT NULL,
   `DNIUsuario` varchar(9) NOT NULL,
@@ -56,7 +52,6 @@ CREATE TABLE `donaciones` (
 -- Estructura de tabla para la tabla `noticia`
 --
 
-DROP TABLE IF EXISTS `noticia`;
 CREATE TABLE `noticia` (
   `id` int(10) NOT NULL,
   `titulo` varchar(20) NOT NULL,
@@ -73,7 +68,6 @@ CREATE TABLE `noticia` (
 -- Estructura de tabla para la tabla `ong`
 --
 
-DROP TABLE IF EXISTS `ong`;
 CREATE TABLE `ong` (
   `CIF` varchar(9) NOT NULL,
   `nombre` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -91,7 +85,6 @@ CREATE TABLE `ong` (
 -- Estructura de tabla para la tabla `producto`
 --
 
-DROP TABLE IF EXISTS `producto`;
 CREATE TABLE `producto` (
   `idProducto` int(10) NOT NULL,
   `stock` int(11) NOT NULL,
@@ -109,7 +102,6 @@ CREATE TABLE `producto` (
 -- Estructura de tabla para la tabla `proyecto`
 --
 
-DROP TABLE IF EXISTS `proyecto`;
 CREATE TABLE `proyecto` (
   `idProyecto` int(10) NOT NULL,
   `CIFOng` varchar(9) NOT NULL,
@@ -130,7 +122,6 @@ CREATE TABLE `proyecto` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `DNI` varchar(9) NOT NULL,
   `nombre` varchar(20) NOT NULL,
@@ -153,7 +144,6 @@ CREATE TABLE `usuario` (
 -- Estructura de tabla para la tabla `voluntarios`
 --
 
-DROP TABLE IF EXISTS `voluntarios`;
 CREATE TABLE `voluntarios` (
   `idVoluntariado` int(10) NOT NULL,
   `idProyecto` int(10) NOT NULL,
@@ -241,22 +231,22 @@ ALTER TABLE `donaciones`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProducto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `proyecto`
 --
 ALTER TABLE `proyecto`
-  MODIFY `idProyecto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idProyecto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT de la tabla `voluntarios`
 --
 ALTER TABLE `voluntarios`
-  MODIFY `idVoluntariado` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idVoluntariado` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Restricciones para tablas volcadas
 --
