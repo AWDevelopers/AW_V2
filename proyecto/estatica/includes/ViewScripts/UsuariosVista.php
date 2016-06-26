@@ -80,13 +80,7 @@ EOS;
 		$html = <<<EOS
 		
   			<div class="cabeceraPerfil">
-				<div id="volver" >
-					<button name = "volver" class= "bCabecera" ><img src="img/back.png"></button>
-				</div>
 				
-				<div id="cerrar">
-					<button id = "bCerrar" class="bCabecera" ><img src="img/salir.png"></button>
-				</div>
 				
 				<div id="fotoUsuario" >
 						<img src="$avatar">
