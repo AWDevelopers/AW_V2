@@ -218,9 +218,47 @@ EOS;
 			}	 	
 		}
 
+		public function muestraInsertarProd(){
+			require_once '/../ModelScripts/GestorOngs.php';
+			$listaOngs = new GestorOngs();
+
+			$lista = $listaOngs->getLista();
+            $iterator = $lista->getIterator();
 		
+
+             echo'
+          			<form action="includes/formInsertarProducto.php" method="POST">
+				  <p>Nombre del producto
+				  	<input type="text" name="NOMBRE" required></input></p>
+
+				  <p>Cif
+					<select name = "CIF">';
+					
+						while($iterator->valid()) {
+							
+							echo "<option value=".$iterator->current()->getCif().">".$iterator->current()->getCif()."</option>";
+							  $iterator->next();
+						}
+
+				echo'
+					</select>
+				<p>Precio
+			  	
+			  		<input type="text" name="PRECIO"></input> </p>
+				  <p>Descripción corta
+					<input type="text" name="DCORTA" required></input></p>
+				  <p>Descripción larga
+				<input type="text" name="DLARGA" required></input></p>
+				  <p>Número de unidades
+					<input type="text" name="STOCK" required></input></p>
+				  <p>Imagen
+				  <input id="file_url" type="file" name="IMAGEN"> (*)</input>
+				  <p><input type="submit" ></p>
+				  </form>';
+
+		}	 	
 		
 		
 	}
-?>
 
+?>
