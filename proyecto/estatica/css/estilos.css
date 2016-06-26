@@ -129,7 +129,11 @@ button {
 	margin-left:25%;
 }
 
-.
+.imgONG{
+	word-wrap: break-word;
+	margin-right: 30%;
+	margin-left:25%;
+}
 
 .imgONG img{
 	width: 60%;
@@ -138,8 +142,10 @@ button {
 
 .cajaDescripcion{
 	background: white;
-	min-height:80%;
-	min-width:30%;
+	display: block;
+	word-wrap: break-word;
+	padding: 1%;
+	border: 1px solid grey;
 }
 .contenidoVoluntarios{
 	float: left;
@@ -295,11 +301,25 @@ button {
 .proyectoApuntame{
 	float:left;
 }
-
+.proyecto{
+	text-align: center;
+}
+.proyecto img{
+	padding-right: 50%;
+}
+.proyectoFechas p{
+	font-size: 15px;
+}
+.proyectoVoluntario p{
+	font-size: 15px;
+}
+.proyectoApuntame{
+	float: right;
+}
 /* --------------------VOLUNTARIOS---------------*/
 .contenidoVoluntario{
 	float: left;
-	margin: 40 px;
+	margin: 40px;
 	padding: 15px;
 	height: 140px;
 	width: 90%;
@@ -364,18 +384,16 @@ button {
 	align-items: center;
 	text-align: center;
 	float: left;
-	margin: 20px;
+	margin:2.5%;
 	border-color: black;
-	padding: 10px;
+	padding: 3%;
 	height: 15%;
 	width: 30%;
-	min-height: 120px;
-	max-height: 400px;
-	min-width: 100px;
+	max-height:400px;
 	max-width: 200px;
 }
 .producto h3{
-	margin-top: 5px;
+	margin-top: 1%;
 }
 .producto img{
 	height: auto; 
@@ -508,6 +526,20 @@ progress{
 #datoscantidad{
 	float: right;
 	display: inline-block;
+
+}
+#datoscantidad form input[type="textarea"]{
+	border: 2px solid #ccc;
+    border-radius: 2%;
+    font-size: 90%;
+    background-color: white;
+}
+#datoscantidad form input[type="submit"]{
+	background-color: #3399ff;
+	border: none;
+	border-radius: 4px;
+	color: white;
+    font-size: 16px;
 }
 #datosDonacion{
 	float: right;
@@ -521,7 +553,6 @@ progress{
 }
 
 #tituloDonacionesVista{
-	
 	margin-left:42%;
 }
 /*------------------FIN DONACIONES----------*/
@@ -536,6 +567,7 @@ progress{
 	display: inline-block;
 }
 #imagenOng{
+	word-wrap: break-word;
 	float: left;
 	display:inline-block;
 	margin-left: 60px;
