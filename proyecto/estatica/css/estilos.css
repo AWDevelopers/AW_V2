@@ -527,11 +527,13 @@ progress{
 /*------------------FIN DONACIONES----------*/
 
 /*-----------------ONG---------------------*/
-#datosOng{
-	float: right;
+.datosOng{
+	float: left;
 	display: inline-block;
-	margin-right: 280px;
-	margin-top: 50px;
+	margin-left: 40%;
+}
+.datosOng form input{
+	display: inline-block;
 }
 #imagenOng{
 	float: left;

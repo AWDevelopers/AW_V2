@@ -249,35 +249,35 @@
 			$tlf=$lista->getTelefono();
 
 			$imagen= $lista->getImagen();
-			echo '<div id= "contenido">';
-			echo '<div id="datosOng">';
-				echo '<p><strong>Nombre de la Ong:</strong>' . $nombre;
+				echo '<div class= "contenido">';
+				echo '<div class="datosOng">';
+				echo '<p><strong>Nombre de la Ong: </strong>' . $nombre.'</p>';
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
 				$app = App::getSingleton();
     			if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
-					echo ' ----- <a href="vistaModificarNombreOng.php?data='. $nombre . '"> Modificar </a></p>';
+					echo '<form action="vistaModificarNombreOng.php?data='. $nombre . '"><input type="submit" value="Modificar"/></p>';
 				}
-				echo '<p><strong>CIF de la Ong:</strong>' . $cif;
+				echo '<p><strong>CIF de la Ong: </strong>' . $cif.'</p>';
 				
-				echo '<p><strong>Dirección de la Ong:</strong>' . $dir;
+				echo '<p><strong>Dirección de la Ong: </strong>' . $dir.'</p>';
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
 				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
-					echo ' ----- <a href="vistaModificarDireccionOng.php?data='. $dir . '"> Modificar </a></p>';
+					echo '<form action="vistaModificarDireccionOng.php?data='. $dir . '"><input type="submit" value="Modificar"/></p>';
 				}
-				echo '<p><strong>Email de la Ong:</strong>' . $email;
+				echo '<p><strong>Email de la Ong: </strong>' . $email.'</p>';
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
 				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
-					echo ' ----- <a href="vistaModificarEmailOng.php?data='. $email . '"> Modificar </a></p>';
+					echo '<form action="vistaModificarEmailOng.php?data='. $email . '"><input type="submit" value="Modificar"/></p>';
 				}
-				echo '<p><strong>Teléfono de la Ong:</strong>' . $tlf;
+				echo '<p><strong>Teléfono de la Ong: </strong>' . $tlf.'</p>';
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
 				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
-					echo ' ----- <a href="vistaModificarTelefonoOng.php?data='. $tlf . '"> Modificar </a></p>';
+					echo '<form action="vistaModificarTelefonoOng.php?data='. $tlf . '"><input type="submit" value="Modificar"/></p>';
 				}
 				//if((isset($_SESSION['login'])&&$_SESSION['usuario'] == $user)){
 				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
-					echo '<p><strong>Usuario de la Ong: </strong>' . $user . ' ----- <a href="vistaModificarUsuarioOng.php?data='. $user . '">    Modificar </a></p> ';
-					echo '<p><strong>Contraseña de la Ong: </strong> ************ ----- <a href="vistaModificarPassOng.php?data='. $cif . '">    Modificar </a></p> ';
+					echo '<p><strong>Usuario de la Ong: </strong>' . $user .'</p><form action="vistaModificarUsuarioOng.php?data='. $user . '"><input type="submit" value="Modificar"/></p>';
+					echo '<p><strong>Contraseña de la Ong: </strong> ************</p><form action="vistaModificarPassOng.php?data='. $cif . '"><input type="submit" value="Modificar"/></p>';
 				//}
 
 					echo '<form action="vistaEliminarOng.php?CIF='.$cif.'" method="POST">

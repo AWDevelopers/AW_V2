@@ -168,7 +168,7 @@ EOS;
 										<input name="button" type="submit" value="Modificar" />
 								   </form>
 								   <form>
-									<button onclick="eliminaNoticia($num,$id)" name="button" type="none" value="eliminar">Eliminar</button>
+									<input onclick="eliminaNoticia($num,$id)" name="button" type="submit" value="Eliminar"/>
 								   </form>
 										
 								

@@ -13,18 +13,17 @@
 		<?php 
 			require ('common.php');
 		?>
-		<div class="contenidoPerfilOng">
-			<div id="proyectoONG">
+	</div>
+		<div class="contenido">
 				<?php
 					require_once 'includes/ViewScripts/OngsVista.php';
 					$ong = new vistaOng();
 					$ong->muestraPerfilOng($_GET['ong']);
 					
 				?>
-			</div>
 						
 		</div>
-	</div>
+
 </body>
 </html> 
 

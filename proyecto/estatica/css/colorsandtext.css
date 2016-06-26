@@ -157,6 +157,7 @@ button:active /* Al presionarse el botón */ {
 }	
 
 
+
 #conocenosInicio h1{
 	color: #000;
  	text-shadow: #555 2px 2px 3px;
@@ -415,4 +416,30 @@ progress{
      background-color: #666;
  }
      
+}
+.datosOng{
+	padding:1%;
+	background-color: white;
+}
+.datosOng p{
+	font-size: 16px;
+	font-family: arial;
+}
+.datosOng a{
+	background-color: #6666ff;
+	border: none;
+	border-radius:1px;
+	color: white;
+    font-size: 16px;
+}
+.datosOng input{
+	margin-left:1%; 
+	background-color: #6666ff;
+	border: none;
+	border-radius:1px;
+	color: white;
+    font-size: 16px;
+}
+.datosOng input:hover{
+	background-color:#b3b3ff;
 }
