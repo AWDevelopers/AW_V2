@@ -28,9 +28,9 @@
 			$connection->query($consulta) or die($connection->error);
 			
 			//Actualizo el proyecto añadiendo la nueva donacion
-			$consulta2 = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$id'";
+			/*$consulta2 = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$id'";
 			$connection->query($consulta2) or die($connection->error);
-			//$rs->free();
+			//$rs->free();*/
 		}
 
 		public function borraDonacion($id){

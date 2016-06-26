@@ -4,6 +4,7 @@
 	class GestorDonaciones{
 
 		private $dao;
+		private $daoD;
 		function __construct(){
 			$this->dao = new DaoProyectos();
 			$this->daoD = new DaoDonaciones();
@@ -15,8 +16,9 @@
         	$dineroD = htmlspecialchars(trim(strip_tags($dinero)));
         	$dniD= htmlspecialchars(trim(strip_tags($dni)));
         	
-			$this->dao->sumaDineroAcumulado($idD, $dineroD);
+			
 			$this->daoD->addDonacion($dniD, $idD, $dineroD);
+			$this->dao->sumaDineroAcumulado($idD, $dineroD);
 		}
 	}
 

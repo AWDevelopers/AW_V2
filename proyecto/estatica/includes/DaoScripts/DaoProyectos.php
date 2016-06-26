@@ -46,8 +46,9 @@
 		function sumaDineroAcumulado($idProyecto, $dinero){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
-			$sql = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$id'";
+			$sql = "UPDATE proyecto SET dineroAcumulado = (dineroAcumulado + '$dinero') WHERE idProyecto = '$idProyecto'";
 			$con->query($sql) or die ($con->error);
+			return $dinero;
 		}
 
 		function borraProyecto($idProyecto){

@@ -67,12 +67,11 @@
 			//if(!(isset($_SESSION['login']) && $_SESSION['login'])){
 			$app = App::getSingleton();
     		if($app->usuarioLogueado()){
+				$dni= $app->dniUsuario();
 				echo '<div class="contenidoPerfilUsuario">';
 				echo '<form action="includes/formDonacion.php" method="POST">
-					  <p>Dni:
-					  <input type="text" name="dni" required></input></p>
-					  <p>Proyecto(id):
-					  <input type="text" name="pid" required value = "' . $id . '"></input></p>
+					  <input type="hidden" name="pid" value="'.$id.'">
+					  <input type="hidden" name="dni" value="'.$dni.'">
 					  <p>Tarjeta con la que realizar el pago:
 					  <input type="text" name="tarjeta" required"></input></p>
 					  <p>Cantidad a donar:
