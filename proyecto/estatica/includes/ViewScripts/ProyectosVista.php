@@ -47,20 +47,22 @@ EOS;
 		if (isset($_SESSION['login']) && $_SESSION['login'])
 			$idUsuario = $_SESSION['DNI'];
 		$html = <<<EOS
+		<div class="proyecto">
 		<h1> $nombre </h1>
 		<div class="imgDonacion">
 			<img src="$imagen" />
 		</div>
 		<div class="cajaDescripcion">
-		<p> $descripcion </p>
+			<p> $descripcion </p>
 		</div>
-		<div class='proyectoFechas'>Fecha: $fecha </div>	
-		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>
+		<div class="proyectoFechas"><p>Fecha: $fecha</p> </div>	
+		<div class="proyectoVoluntario"><p>Voluntarios necesarios: $numVoluntarios </p></div>
 		<p><div class="proyectoApuntame"><form name="vista" action="includes/formApuntameVoluntario.php" method="POST">
 				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
 				<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
 				<input name="button" type="submit" value="APUNTAME" /></div></p>
 		</form>
+		</div>
 EOS;
 		echo $html;
 	}

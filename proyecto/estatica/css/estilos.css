@@ -138,8 +138,10 @@ button {
 
 .cajaDescripcion{
 	background: white;
-	min-height:80%;
-	min-width:30%;
+	display: block;
+	word-wrap: break-word;
+	padding: 1%;
+	border: 1px solid grey;
 }
 .contenidoVoluntarios{
 	float: left;
@@ -295,11 +297,25 @@ button {
 .proyectoApuntame{
 	float:left;
 }
-
+.proyecto{
+	text-align: center;
+}
+.proyecto img{
+	padding-right: 50%;
+}
+.proyectoFechas p{
+	font-size: 15px;
+}
+.proyectoVoluntario p{
+	font-size: 15px;
+}
+.proyectoApuntame{
+	float: right;
+}
 /* --------------------VOLUNTARIOS---------------*/
 .contenidoVoluntario{
 	float: left;
-	margin: 40 px;
+	margin: 40px;
 	padding: 15px;
 	height: 140px;
 	width: 90%;

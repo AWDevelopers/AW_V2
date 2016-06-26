@@ -232,8 +232,19 @@ button:active /* Al presionarse el botón */ {
 }
 
 .proyectoApuntame{
+	margin-top: 5%;
 	margin-right:40%;
 	margin-left:45%;
+}
+.proyectoApuntame input{
+	background-color: #3399ff;
+	border: none;
+	color: white;
+    font-size: 16px;
+    border: 2px solid #3399ff;
+}
+.proyectoApuntame form input:hover{
+	background-color: #66b3ff;
 }
 
 /* --------------------VOLUNTARIOS---------------*/
