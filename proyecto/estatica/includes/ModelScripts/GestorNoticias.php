@@ -27,7 +27,7 @@
 			$lista = $this->dao->listaNoticiasSecundarias();
 			$array = new ArrayObject();
 			for($i= 0; $i <sizeof($lista)-1 ; $i++){
-			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
+			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'],$lista[$i]['fecha'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -36,7 +36,7 @@
 			$lista = $this->dao->listaNoticiasTerciarias();
 			$array = new ArrayObject();
 			for($i= 0; $i <sizeof($lista)-1 ; $i++){
-			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
+			$array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'],$lista[$i]['fecha'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}
@@ -45,7 +45,7 @@
 			$lista = $this->dao->listaNoticiasOtras();
 			$array = new ArrayObject();
 			for($i= 0; $i <sizeof($lista)-1 ; $i++){
-                            $array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'], $lista[$i]['imagen'],$lista[$i]['fecha']));
+                            $array->append(new noticia($lista[$i]['id'], $lista[$i]['titulo'], $lista[$i]['tipo'], $lista[$i]['descripcionCorta'], $lista[$i]['descripcionLarga'],$lista[$i]['fecha'], $lista[$i]['imagen']));
 			}
 			return $array;
 		}

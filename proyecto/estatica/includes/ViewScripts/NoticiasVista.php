@@ -78,7 +78,7 @@ EOS;
                                     <h3> $titulo </h3>
                                     <img src="$imagen"/>
                                     <p> $desCorta </p>
-                                    <form name="vista" action="includes/formMuestraNotcia.php" method="POST">
+                                    <form name="vista" action="includes/formMuestraNoticia.php" method="POST">
                                             <input type="hidden" name="id" id="noticia" value="$id" /> 
                                             <input name="button" type="submit" value="Seguir Leyendo" />
                                     </form>
