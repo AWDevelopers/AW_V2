@@ -13,14 +13,12 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-			<div id="proyectoONG">
 				<?php
 					require_once "includes/ViewScripts/DonacionesVista.php";
 					
 					$v = new vistaDonaciones();
 					$v->muestraInsertarDonacion($_POST['idProyect'], $_POST['cantidad']);
 				?>
-			</div>
 		</div>
 	</div>
 </body>

@@ -129,7 +129,11 @@ button {
 	margin-left:25%;
 }
 
-.
+.imgONG{
+	word-wrap: break-word;
+	margin-right: 30%;
+	margin-left:25%;
+}
 
 .imgONG img{
 	width: 60%;
@@ -522,6 +526,20 @@ progress{
 #datoscantidad{
 	float: right;
 	display: inline-block;
+
+}
+#datoscantidad form input[type="textarea"]{
+	border: 2px solid #ccc;
+    border-radius: 2%;
+    font-size: 90%;
+    background-color: white;
+}
+#datoscantidad form input[type="submit"]{
+	background-color: #3399ff;
+	border: none;
+	border-radius: 4px;
+	color: white;
+    font-size: 16px;
 }
 #datosDonacion{
 	float: right;
@@ -549,6 +567,7 @@ progress{
 	display: inline-block;
 }
 #imagenOng{
+	word-wrap: break-word;
 	float: left;
 	display:inline-block;
 	margin-left: 60px;

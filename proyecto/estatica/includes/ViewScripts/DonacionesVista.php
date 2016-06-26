@@ -27,7 +27,7 @@
 				echo'	<div class="contenido">
 				
 						<div id= "tituloDonacionesVista">
-						<h1><a href="perfilOng.php?ong='.$CIFOng.'">'.$nombre.'</a></h1>
+						<h1>'.$nombre.'</a></h1>
 						</div>
 						
 						<div class = "imgONG">
@@ -68,18 +68,20 @@
 			$app = App::getSingleton();
     		if($app->usuarioLogueado()){
 				$dni= $app->dniUsuario();
-				echo '<div class="contenidoPerfilUsuario">';
-				echo '<form action="includes/formDonacion.php" method="POST">
+				echo '<div class="contenido">';
+				echo '<div class="formulario">
+					  <form action="includes/formDonacion.php" method="POST">
 					  <input type="hidden" name="pid" value="'.$id.'">
 					  <input type="hidden" name="dni" value="'.$dni.'">
-					  <p>Tarjeta con la que realizar el pago:
-					  <input type="text" name="tarjeta" required"></input></p>
-					  <p>Cantidad a donar:
-					  <input type="text" name="cantidad" required value="' . $dinero . '"></input></p>';
+					  <p>Tarjeta con la que realizar el pago:</p>
+					  <input type="text" name="tarjeta" required"></input>
+					  <p>Cantidad a donar:</p>
+					  <input type="text" name="cantidad" required value="' . $dinero . '"></input>';
 					  //<p><input type="submit" name="donacion" value="Hacer Donación"></input></p></form>';
 				echo'<p><input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet."></p>';
 				echo'<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">';
 				echo '</form>';
+				echo '</div>';
 				echo '</div>';
 			}else{
 				echo '<h2>Usuario no logueado !</h2>';
