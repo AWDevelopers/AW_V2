@@ -350,19 +350,14 @@ button {
 	display: block;
 	align-items: center;
 	background-color: black;
-}
-.filtro p{
-	margin: auto;
-	
-	text-align: center;
 	display: inline-block;
 }
-.filtro button{
-	margin-left:5%;
-    padding: auto;
-    
-	width: 23%;
+.filtro form input{
     text-align: center;
+    margin-left: 1.5%;
+    margin-right: 5%;
+    float: left;
+    display: inline-block;
 }
 .producto{
 	overflow: hidden;
@@ -376,8 +371,8 @@ button {
 	width: 30%;
 	min-height: 120px;
 	max-height: 400px;
-	min-width: 200px;
-	max-width: 100px;
+	min-width: 100px;
+	max-width: 200px;
 }
 .producto h3{
 	margin-top: 5px;
@@ -385,17 +380,18 @@ button {
 .producto img{
 	height: auto; 
     width: auto; 
-    min-width: 100px; 
-    max-height: 160px;
+    width: 100px; 
+    height: 100px;
     border: 1px solid black;
 }
 #imagenProducto{
 	margin:2%;
-	max-width: 140px;
-   margin-right: 2%;
+	width: 120px;
+	height: 100px;
+    margin-right: 2%;
 }
 .producto form input{
-	margin-bottom: 50px;
+	margin-bottom: 5%;
     padding: 10px 16px;
     text-align: center;
 }

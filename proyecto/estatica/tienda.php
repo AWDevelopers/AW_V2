@@ -3,7 +3,7 @@
 <head>
 	<title>Tienda InCommOng</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-		<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
+	<link rel="stylesheet" type="text/css" href="css/colorsandtext.css"/>
 
 </head>
 <body>
@@ -18,18 +18,16 @@
 		<!--Aqui va el contenido-->
 		<div class="contenido">
 			<div class="filtro">
-				<p>Filtros:</p>
-				<!--Estos botones deberían hacer cosas, pero sin bd no van a poder-->
 				<form method ="post">
-				<input type= "submit" value ="nombre" name ="nombre"/>
+					<input type= "submit" value ="Nombre" name ="nombre"/>
 				</form>
 		
 				<form method ="post">
-				<input type= "submit" value ="desc" name ="desc"/>
+					<input type= "submit" value ="Precio descendente" name ="desc"/>
 				</form>
 
 				<form method ="post">
-				<input type= "submit" value ="asc" name ="asc"/>
+					<input type= "submit" value ="Precio ascendente" name ="asc"/>
 				</form>
 			</div>
 			
