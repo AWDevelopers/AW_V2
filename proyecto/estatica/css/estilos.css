@@ -127,6 +127,7 @@ button {
 	width: 52.5%;
 	height: 52.5%;
 	margin-left:25%;
+	
 }
 
 .imgONG{
@@ -554,7 +555,7 @@ progress{
 }
 
 #tituloDonacionesVista{
-	margin-left:42%;
+	margin-left:26%;
 }
 /*------------------FIN DONACIONES----------*/
 

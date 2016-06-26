@@ -164,32 +164,27 @@ EOS;
 		if (isset($_SESSION['login']) && $_SESSION['login'])
 			$idUsuario = $_SESSION['DNI'];
 		$html = <<<EOS
+		<p> $descripcionCorta</p>
 		<form name="vista" action="includes/formModificaProyecto.php" method="POST">
-		<input type="text" id="nombre" value="$nombre"  name="nombre"></input> </p>
+		<p> <h2>Titulo: </h2><input type="text" id="nombre" value="$nombre"  name="nombre"></input> </p>
 		<div class="imgDonacion">
 			<p> <h2>Imagen: </h2></p>
-			<input id="file_url" type="file" value=$imagen id="imagen" name="imagen" ></input><img src='$imagen' />
+			<img src='$imagen' />
+			<input id="file_url" type="file" value=$imagen id="imagen" name="imagen" ></input>
 		</div>
-		<div class="cajaDescripcion">
-			<p><h2> Descripción:</h2> </p>
-			<textarea id="descripcionCorta" rows="4"  name="descripcionCorta" value= "$descripcionCorta" alt=$descripcionCorta></textarea>
-		</div>
-		<div class="cajaDescripcion">
-			<p><h2> Descripción:</h2> </p>
-			<textarea id="descripcionCorta" rows="8" name="descripcionLarga" value= "$descripcionLarga" alt=$descripcionLarga></textarea>
-		</div>
-		<div class='proyectoFechas'>
-			<p> <h2>Fecha: </h2></p>
-			<input type="date" size="20" name="fechaFin" id="fechaFin"  value:"$fecha"></input>
-		</div>
+			<p><h2> Descripción Corta:</h2> </p>
+			<textarea id="descripcionCorta" rows="4"  name="descripcionCorta" value="$descripcionCorta" ></textarea>
+			<p><h2> Descripción larga:</h2> </p>
+			<p><textarea id="descripcionCorta" rows="8" name="descripcionLarga" value="$descripcionLarga" ></textarea></p>
+		<p> <h2>Fecha: </h2></p>
+		<input type="date" size="20" name="fechaFin" id="fechaFin"  value="$fecha"></input>
+		<p>
 		<div class='proyectoDinero'>
-			<p> <h2>Dinero Necesario: </h2></p>
-			<input type="numbre" size="20" name="dineroNecesario" value:"$dineroNecesario"></input>
+			<p> <h2>Dinero Necesario: </h2>
+			<p><input type="numbre" size="20" name="dineroNecesario" value="$dineroNecesario"></input></p>
 		</div>
-		<div class='proyectoVoluntario'>
 			<p><h2>Voluntarios necesarios: </h2></p>
 			<input type="number" value= "$numVoluntarios" name="numVoluntarios" id = "numVoluntarios"></input>
-		</div>
 		
 		<p><div class="proyectoApuntame">
 				<input type="hidden" name="idProyecto" id="idProyecto" value="$id" /> 
