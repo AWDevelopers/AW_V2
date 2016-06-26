@@ -82,9 +82,8 @@ EOS;
   			<div class="cabeceraPerfil">
 				
 				
-				<div id="fotoUsuario" >
-						<img src="$avatar">
-						
+				<div id="fotoUsuario">
+					<img src="$avatar" alt="avatar" width="200" height="200">	
 				</div>
 				
 			</div>
