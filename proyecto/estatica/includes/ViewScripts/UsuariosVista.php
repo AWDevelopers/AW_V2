@@ -5,6 +5,7 @@
 		private $ListaUsuarios;
 		function __construct(){
 			require_once '/../ModelScripts/GestorUsuarios.php';
+			require_once '/../ModelScripts/GestorVoluntarios.php';
 			$this->ListaUsuarios = new GestorUsuarios();
 		}
 		
@@ -67,6 +68,8 @@ EOS;
 	}
 	function perfilUsuario($dni){
 		$datosUsuario = $this->ListaUsuarios->getUsuario($dni);
+		$gestorV = new GestorVoluntarios();
+		$horas = $gestorV->getSumHorasVoluntariado($dni);
 		$nombre = $datosUsuario->getNombre();
 		$apellidos =$datosUsuario->getApellidos();
 		$user = $datosUsuario->getUsuario();
@@ -74,6 +77,10 @@ EOS;
 		$DNI = $datosUsuario->getDNI();
 		$telefono = $datosUsuario->getTelefono();
 		$avatar = $datosUsuario->getAvatar();
+
+
+		
+
 		$html = <<<EOS
 		
   			<div class="cabeceraPerfil">
@@ -122,15 +129,7 @@ EOS;
 		<div id= "contenidoPerfilUsuario">
 			<div id ="datosUsuario">
 				<p><h2>Bolsa de horas: </h2></p>
-				<p>Horas semanales: 8h</p>
-				<form>
-					<p>Día: </p>
-					<p><input type="date" name="dia"></p>
-					<p>Horas: </p>
-					<p><input type="time" name="horas"></p>
-					<p><input type="submit" value ="confirmar"></input></p>
-
-				</form>
+				<p>Horas acumuladas: $horas</p>
 			</div>
 		</div>
 		<div id= "contenidoPerfilUsuario">
@@ -166,7 +165,7 @@ EOS;
 EOS;
 			echo $html; 
 	}
-	
 
+	
 }
 ?>

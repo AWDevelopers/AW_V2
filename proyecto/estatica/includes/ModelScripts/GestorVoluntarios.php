@@ -22,7 +22,7 @@
 		public function getSumHorasVoluntariado($dniUsuario){
 			$lista = $this->dao->sumHorasVoluntario($dniUsuario);
 			$sum = 0;
-			for($i= 0; $i <sizeof($lista)-1 ; $i++){
+			for($j= 0; $j <sizeof($lista)-1 ; $j++){
 			  $sum += ($lista[$j]['horaSalida'] - $lista[$j]['horaEntrada']);			
 			}
 			return $sum;
