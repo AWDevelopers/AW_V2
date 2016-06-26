@@ -11,9 +11,9 @@
 		}
 
 		public function addDonacion($dni, $id, $dinero){
-			$idD= htmlspecialchars(trim(strip_tags($idD)));
+			$idD= htmlspecialchars(trim(strip_tags($id)));
         	$dineroD = htmlspecialchars(trim(strip_tags($dinero)));
-        	$dniD= htmlspecialchars(trim(strip_tags($dniD)));
+        	$dniD= htmlspecialchars(trim(strip_tags($dni)));
         	
 			$this->dao->sumaDineroAcumulado($idD, $dineroD);
 			$this->daoD->addDonacion($dniD, $idD, $dineroD);

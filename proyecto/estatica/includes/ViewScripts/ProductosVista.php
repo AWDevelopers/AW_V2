@@ -164,7 +164,7 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 						echo '  <textarea  rows="10" cols="40" name= "DLARGA">'.$producto->getDescLargaProducto().'</textarea> ';
 						echo '<p>Stock </p>';
 						echo '  <input type = "text" name= "STOCK" value ="'.$producto->getstockProducto().'">';
-						echo '<input id="file_url" type="file" name="IMAGEN"> (*)</input>';
+						echo '<input id="file_url" type="file" name="IMAGEN" required> (*)</input>';
 						echo ' <input type= "submit" value = "MODIFICAR"></p>';
 				echo '</form>';
     			
@@ -200,7 +200,8 @@ use \AW\proyecto\estatica\includes\Aplicacion as App;
 										<input type="hidden" name="imagen"  value="$imagen"/>
 										<input type="hidden" name="nombre"  value="$nombre"/>
 										<input type="hidden" name="precio"  value="$precio"/>
-										<input type="hidden" name="desc"  value="$desl"/>
+										<input type="hidden" name="desc"  value="$desc"/>
+										<input type="hidden" name="desl"  value="$desl"/>
 										<input type="hidden" name="stock"  value="$stock"/>
 										<input name="button" type="submit" value="Modificar" />
 								   </form>
@@ -244,7 +245,7 @@ EOS;
 					</select>
 				<p>Precio
 			  	
-			  		<input type="text" name="PRECIO"></input> </p>
+			  		<input type="text" name="PRECIO" required></input> </p>
 				  <p>Descripción corta
 					<input type="text" name="DCORTA" required></input></p>
 				  <p>Descripción larga
@@ -252,7 +253,7 @@ EOS;
 				  <p>Número de unidades
 					<input type="text" name="STOCK" required></input></p>
 				  <p>Imagen
-				  <input id="file_url" type="file" name="IMAGEN"> (*)</input>
+				  <input id="file_url" type="file" name="IMAGEN" required> (*)</input>
 				  <p><input type="submit" ></p>
 				  </form>';
 

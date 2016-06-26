@@ -254,34 +254,35 @@
 				echo '<p><strong>Nombre de la Ong:</strong>' . $nombre;
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
 				$app = App::getSingleton();
-    			if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+    			if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
 					echo ' ----- <a href="vistaModificarNombreOng.php?data='. $nombre . '"> Modificar </a></p>';
 				}
 				echo '<p><strong>CIF de la Ong:</strong>' . $cif;
 				
 				echo '<p><strong>Dirección de la Ong:</strong>' . $dir;
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
-				if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
 					echo ' ----- <a href="vistaModificarDireccionOng.php?data='. $dir . '"> Modificar </a></p>';
 				}
 				echo '<p><strong>Email de la Ong:</strong>' . $email;
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
-				if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
 					echo ' ----- <a href="vistaModificarEmailOng.php?data='. $email . '"> Modificar </a></p>';
 				}
 				echo '<p><strong>Teléfono de la Ong:</strong>' . $tlf;
 				//if((isset($_SESSION['login'])&& $_SESSION['usuario'] == $user)){
-				if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
 					echo ' ----- <a href="vistaModificarTelefonoOng.php?data='. $tlf . '"> Modificar </a></p>';
 				}
 				//if((isset($_SESSION['login'])&&$_SESSION['usuario'] == $user)){
-				if($app->usuarioLogueado() && $app->nombreUsuario()==$user){
+				if($app->usuarioLogueado() && ($app->nombreUsuario()==$user || $app->tieneRol("Admin"))){
 					echo '<p><strong>Usuario de la Ong: </strong>' . $user . ' ----- <a href="vistaModificarUsuarioOng.php?data='. $user . '">    Modificar </a></p> ';
 					echo '<p><strong>Contraseña de la Ong: </strong> ************ ----- <a href="vistaModificarPassOng.php?data='. $cif . '">    Modificar </a></p> ';
-				}
+				//}
+
 					echo '<form action="vistaEliminarOng.php?CIF='.$cif.'" method="POST">
       				<input type="hidden" name="CIF" value="$cif"><input type ="submit" name="eliminar" value="Eliminar Ong" size="30"></form>';
-				//}
+				}
 				echo '<div id = "imagenDonacion">
 
   				<p><img src="'.$imagen.'" /></p>
