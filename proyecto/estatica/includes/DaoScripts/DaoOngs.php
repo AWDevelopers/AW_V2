@@ -33,7 +33,7 @@
 			return $numCol;
 		}
 
-		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf){
+		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf, $img){
 			$app = App::getSingleton();
     		$con = $app->conexionBd();
     		$opciones = [
@@ -42,8 +42,8 @@
 			];
 			$contra = $pass;
 			$contra = password_hash($contra, PASSWORD_BCRYPT, $opciones)."\n";
-			$consulta = "INSERT INTO ong(CIF, nombre, direccion, email, usuario, pass, telefono) VALUES ";
-			$consulta .= "('" . $cif . "', '" . $nombre . "', '" . $dir . "', '" . $mail . "', '" . $user . "', '" . $contra . "', '" . $tlf . "')";
+			$consulta = "INSERT INTO ong(CIF, nombre, direccion, email, usuario, pass, telefono, imagen) VALUES ";
+			$consulta .= "('" . $cif . "', '" . $nombre . "', '" . $dir . "', '" . $mail . "', '" . $user . "', '" . $contra . "', '" . $tlf . "', '" . $img . "')";
 			//$rs = $con->query($consulta) or die ($con->error);
 			$con->query($consulta) or die ($con->error);
 			//$rs->free()

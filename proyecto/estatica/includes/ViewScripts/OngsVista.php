@@ -201,6 +201,7 @@
 				$pass=$_POST["pass"];
 				$tlf=$_POST["telefono"];
 				
+				
 				$lista = $this->listaOngs->addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf);
 				header("Location: procesarInsertar.php");
 			}
@@ -209,7 +210,7 @@
 		public function muestraInsertarOng(){
 
 			echo '<div class="formulario">';
-			echo '<form method="POST">
+			echo '<form action=includes/formAniadirOng.php method="POST">
 					<div class="contenido2">
 					<div id="formulariosTitulo"><p><h1> Formulario para una nueva ONG</h1></p></div>
 				  <p><h2>CIF de la Ong</h2></p>
@@ -223,7 +224,9 @@
 				  <p><h2>Usuario</h2></p>
 					<input type="text" name="usuario" required> *</input>
 				  <p><h2>Contraseña</h2></p>
-					<input type="text" name="pass" required> *</input>
+					<input type="password" name="pass" required> *</input>
+					<p> <h2>Imagen: </h2></p>
+						<input id="file_url" type="file" name="foto" required> (*)</input>
 				  <p><h2>Teléfono de contacto</h2></p>
 					<input type="text" name="telefono"></input>
 				  <p><input type="submit" name="add" value="Dar de alta Ong"/></p>
@@ -232,7 +235,7 @@
 				  </form>
 				  </div>';
 			echo '</div>';
-			$this->insertarOng();
+			//$this->insertarOng();
 		}
 
 		public function muestraPerfilOng($ong){

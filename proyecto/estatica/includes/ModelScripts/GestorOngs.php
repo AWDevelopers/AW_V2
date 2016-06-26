@@ -58,7 +58,7 @@
 			$dao = new DaoOngs();
 			return ($dao->deleteOng($cifN));
 		}
-		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf){
+		public function addOng($cif, $nombre, $dir, $mail, $user, $pass, $tlf, $imagen){
 			$cifN = htmlspecialchars(trim(strip_tags($cif)));
 			$nombreN = htmlspecialchars(trim(strip_tags($nombre)));
 			$dirN = htmlspecialchars(trim(strip_tags($dir)));
@@ -66,10 +66,11 @@
 			$userN = htmlspecialchars(trim(strip_tags($user)));
 			$passN = htmlspecialchars(trim(strip_tags($pass)));
 			$tlfN = htmlspecialchars(trim(strip_tags($tlf)));
+			$img =  htmlspecialchars(trim(strip_tags($imagen)));
 			$dao = new DaoOngs();
 			
 			//if($dao->existeOng($cifN, $nombreN) == 1){
-				return ($dao->addOng($cifN, $nombreN, $dirN, $mailN, $userN, $passN, $tlfN));
+				return ($dao->addOng($cifN, $nombreN, $dirN, $mailN, $userN, $passN, $tlfN, $img));
 			//}else{
 			//	header("Location: procesarError.php");
 			//}
