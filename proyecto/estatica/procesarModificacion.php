@@ -16,7 +16,7 @@
 				<p> Use el menú de la izquierda para seguir navegando. </p>    
 			</div>
 			<div id = "imagenDonacion">
-				<p><img src="img/unnamed.png" width="300" height="300" /></p>
+				<p><img src="img/ThankYou.png" width="300" height="300" /></p>
 			</div>
 		</div>
 	</div>
