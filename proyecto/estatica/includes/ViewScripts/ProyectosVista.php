@@ -129,13 +129,16 @@ EOS;
 			$imagen = $iterator->current()->getImagen();
 			$id = $iterator->current()->getIdProyecto();
 			  	 $html = <<<EOS
-			  	 	<div class="proyectoAdmin" id="proyectoAdmin$num">
+			  	 	<div class="noticiaAdmin" id="proyectoAdmin$num">
 				  		<h3> $nombre </h3>
 				  		<form name="vista" action="vistaModificaProyecto.php?id=$id" method="POST">
 				  				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
 				  				<input name="button" type="submit" value="modificar" />
 				  		</form>
-				  				<button onclick="eliminaProyecto($num,$id)" name="button" type="none" value="eliminar">Eliminar</button>
+				  		<form>
+				  			<input onclick="eliminaProyecto($num,$id)" name="button" type="submit" value="Eliminar"></input>
+				  		</form>
+				  				
 			  		</div> 
 EOS;
 			echo $html; 
