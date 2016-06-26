@@ -77,10 +77,6 @@ EOS;
 		$DNI = $datosUsuario->getDNI();
 		$telefono = $datosUsuario->getTelefono();
 		$avatar = $datosUsuario->getAvatar();
-
-
-		
-
 		$html = <<<EOS
 		
   			<div class="cabeceraPerfil">
