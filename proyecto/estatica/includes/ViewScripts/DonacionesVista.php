@@ -50,7 +50,7 @@
 							<div id= "cantidad"> Cantidad:</div>
 								<form action="vistaDonacion.php" method="POST">
 									<p><input type="text" name="cantidad">
-									<input type="hidden" name="idProyect" value="$id">
+									<input type="hidden" name="idProyect" value="'.$id.'">
 									<input type= "submit" name ="donar" value = "Donar" size="20">
 									</p>
 								</form>
