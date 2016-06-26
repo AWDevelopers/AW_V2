@@ -8,7 +8,7 @@
 					echo '<a href="vistaPerfilUsuario.php"><img src="'.$imagen.'" WIDTH=120 HEIGHT=120 ALT="Avatar usuario"> </a>';
 				}
 			echo '</div>';
-			echo '<div class="titulo"> <IMG SRC="img/tituloPagina.png" WIDTH=500 HEIGHT=150 ALT="Avatar usuario"> </div>';
+			echo '<div class="titulo"> <a href="index.php"><IMG SRC="img/tituloPagina.png" WIDTH=500 HEIGHT=150 ALT="Avatar usuario"><a> </div>';
 			echo '<div class="sesion">';
 				if ($app->usuarioLogueado()) {
 					echo '<a href="includes/logout.php"><IMG SRC="img/power.png" WIDTH=60 HEIGHT=60 ALT="Avatar usuario"></a>';
