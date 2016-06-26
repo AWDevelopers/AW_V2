@@ -17,10 +17,12 @@
 		<div class="contenido">
 			<?php
 			require_once ("includes/ViewScripts/UsuariosVista.php");
-			if (isset($_SESSION['login']) && $_SESSION['login']) {
-					$vista = new UsuariosVista();
-					$dni= $_SESSION['DNI'];
-					$vista->perfilUsuario($dni);
+			use \AW\proyecto\estatica\includes\Aplicacion as App;
+			$app = App::getSingleton();
+			if ($app->usuarioLogueado()){
+				$vista = new UsuariosVista();
+				$dni= $_SESSION['DNI'];
+				$vista->perfilUsuario($dni);
 			}
 			?>
 		</div>
