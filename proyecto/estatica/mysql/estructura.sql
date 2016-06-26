@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2016 a las 17:22:35
+-- Tiempo de generación: 26-06-2016 a las 19:42:17
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -56,7 +56,7 @@ CREATE TABLE `donaciones` (
 
 CREATE TABLE `noticia` (
   `id` int(10) NOT NULL,
-  `titulo` varchar(20) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
   `tipo` enum('primaria','secundaria','terciaria','otra') NOT NULL,
   `descripcionCorta` text,
   `descripcionLarga` text NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE `producto` (
   `idProducto` int(10) NOT NULL,
   `stock` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
+  `nombre` varchar(80) NOT NULL,
   `descripcionCorta` mediumtext NOT NULL,
   `descripcionLarga` longtext NOT NULL,
   `CIFOng` varchar(9) NOT NULL,
@@ -110,7 +110,7 @@ CREATE TABLE `proyecto` (
   `fechaCreacion` datetime NOT NULL,
   `dineroNecesario` int(11) NOT NULL,
   `dineroAcumulado` int(11) NOT NULL DEFAULT '0',
-  `nombre` varchar(50) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
   `descripcionCorta` mediumtext NOT NULL,
   `descripcionLarga` longtext NOT NULL,
   `imagen` varchar(50) NOT NULL,
@@ -228,27 +228,27 @@ ALTER TABLE `voluntarios`
 -- AUTO_INCREMENT de la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
-  MODIFY `donaciones_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `donaciones_id` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idProducto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `proyecto`
 --
 ALTER TABLE `proyecto`
-  MODIFY `idProyecto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idProyecto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT de la tabla `voluntarios`
 --
 ALTER TABLE `voluntarios`
-  MODIFY `idVoluntariado` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idVoluntariado` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- Restricciones para tablas volcadas
 --

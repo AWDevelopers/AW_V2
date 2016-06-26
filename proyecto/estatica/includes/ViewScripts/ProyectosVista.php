@@ -47,20 +47,22 @@ EOS;
 		if (isset($_SESSION['login']) && $_SESSION['login'])
 			$idUsuario = $_SESSION['DNI'];
 		$html = <<<EOS
-		<h1> $nombre </h1>
-		<div class="imgDonacion">
-			<img src="$imagen" />
+		<div id="proyectoONG">
+			<h1> $nombre </h1>
+			<div class="imgDonacion">
+				<img src="$imagen" />
+			</div>
+			<div class="cajaDescripcion">
+			<p> $descripcion </p>
+			</div>
+			<div class='proyectoFechas'>Fecha: $fecha </div>	
+			<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>
+			<p><div class="proyectoApuntame"><form name="vista" action="includes/formApuntameVoluntario.php" method="POST">
+					<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
+					<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
+					<input name="button" type="submit" value="APUNTAME" /></div></p>
+			</form>
 		</div>
-		<div class="cajaDescripcion">
-		<p> $descripcion </p>
-		</div>
-		<div class='proyectoFechas'>Fecha: $fecha </div>	
-		<div class='proyectoVoluntario'>Voluntarios necesarios: $numVoluntarios </div>
-		<p><div class="proyectoApuntame"><form name="vista" action="includes/formApuntameVoluntario.php" method="POST">
-				<input type="hidden" name="idProyecto" id="proyecto" value="$id" /> 
-				<input type="hidden" name="idUsuario" id="usuario" value="$idUsuario" /> 
-				<input name="button" type="submit" value="APUNTAME" /></div></p>
-		</form>
 EOS;
 		echo $html;
 	}

@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2016 a las 16:14:06
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Tiempo de generación: 26-06-2016 a las 21:07:19
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -51,25 +51,16 @@ CREATE TABLE `donaciones` (
 --
 
 INSERT INTO `donaciones` (`donaciones_id`, `DNIUsuario`, `idProyecto`, `donacion`) VALUES
-(2, '01234567A', 123456, 3),
-(3, '01234567A', 123456, 5),
-(4, '01234567A', 123456, 456),
-(5, '01234567A', 123456, 54),
-(6, '01234567A', 123456, 46),
-(7, '01234567A', 123456, 34),
-(8, '01234567A', 123456, 65),
-(9, '01234567A', 123456, 65),
-(10, '01234567A', 123456, 65),
-(11, '01234567A', 123456, 65),
-(12, '01234567A', 123456, 56),
-(13, '01234567A', 123456, 56),
-(14, '01234567A', 123456, 56),
-(15, '01234567A', 123456, 56),
-(16, '01234567A', 123456, 54),
-(18, '01234567A', 123456, 345),
-(19, '01234567A', 123456, 654),
-(20, '01234567A', 123456, 654),
-(21, '01234567A', 123456, 123);
+(1, '73422420A', 41, 450),
+(2, '73422420A', 42, 150),
+(3, '45731662A', 41, 500),
+(4, '45731662A', 48, 550),
+(5, '45731661W', 42, 2500),
+(6, '45731661W', 43, 5000),
+(7, '50551762Q', 50, 10000),
+(8, '50551762Q', 45, 1589),
+(9, '72894735F', 50, 50000),
+(10, '50551761S', 49, 15000);
 
 -- --------------------------------------------------------
 
@@ -79,7 +70,7 @@ INSERT INTO `donaciones` (`donaciones_id`, `DNIUsuario`, `idProyecto`, `donacion
 
 CREATE TABLE `noticia` (
   `id` int(10) NOT NULL,
-  `titulo` varchar(20) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
   `tipo` enum('primaria','secundaria','terciaria','otra') NOT NULL,
   `descripcionCorta` text,
   `descripcionLarga` text NOT NULL,
@@ -92,7 +83,13 @@ CREATE TABLE `noticia` (
 --
 
 INSERT INTO `noticia` (`id`, `titulo`, `tipo`, `descripcionCorta`, `descripcionLarga`, `fecha`, `imagen`) VALUES
-(1, 'noticia1', 'primaria', 'descripcion corta', 'descripcion larga', '2016-06-22', 'img/imagen.png');
+(1, '24 horas conduciendo por una buena causa', 'primaria', 'Ford España organiza la XIII carrera benéfica, en la que diez ONG buscarán recaudar fondos para sus proyectos solidarios', 'Los días 24 y 25 de junio tendrá lugar la XIII edición de la Carrera Solidaria 24 Horas Ford, una competición que celebra anualmente la empresa de coches en el Circuito del Jarama (Madrid). Se trata de una prueba de eficiencia automovilística en la que diez vehi?culos parten con una cantidad limitada de combustible y ocho cubiertas, que deberán dosificar durante 24 horas, turna?ndose todos los conductores. La clasificacio?n final se establece por el nu?mero de vueltas que haya conseguido dar cada equipo.\r\n\r\nLa carrera tiene un carácter solidario y sus participantes serán diez organizaciones de diferentes a?mbitos, elegidas por un jurado asesorado por representantes de la Fundacio?n SERES, que competira?n por poner en marcha un proyecto relacionado con discapacidad, infancia y juventud, vi?ctimas de accidentes, enfermos, pai?ses en desarrollo o personas en riesgo de exclusio?n social.\r\n\r\nComo en las anteriores ediciones, cada ONG participante estara? representada por un equipo liderado por rostros populares que prestara?n su imagen de modo altruista. Completara?n la dotacio?n representantes de los patrocinadores, clientes, periodistas, asi? como empleados de Ford Espan?a. El vehi?culo de las 24 Horas Ford 2016 sera? el Ford Fiesta ST.', '2016-06-26', 'img/noticia1.jpg'),
+(2, 'La Cruz Roja viajará a Malvinas', 'primaria', 'En el archipiélago hay 123 tumbas anónimas de argentinos fallecidos en la guerra de 1982\r\nOtros2', '&quot;Soldado argentino solo conocido por Dios&quot;, puede leerse en 123 de las 250 tumbas de combatientes argentinos enterrados en el cementerio de Darwin, en las islas Malvinas. Tras una larga espera de más de 30 años, esos epitafios de la guerra contra Reino Unido están ahora un poco más cerca de poderse cambiar. El Gobierno argentino ha anunciado que una misión técnica del Comité Internacional de la Cruz Roja viajará a fin de mes al archipiélago para evaluar aspectos prácticos de un &quot;eventual trabajo de identificación forense de los restos de los miembros de las Fuerzas Armadas inhumados&quot;.\r\n\r\nLa Cancillería autorizó la misión &quot;en atención a la naturaleza estrictamente humanitaria de la iniciativa y al compromiso asumido por el Gobierno argentino en llevar adelante el reconocimiento de los restos de los soldados caídos&quot;, señaló la cartera encabezada por Susana Malcorra en un comunicado. El viaje de la Cruz Roja es posible gracias a un principio de acuerdo alcanzado entre el Gobierno argentino y el británico, según confió una fuente oficial al diario La Nación', '2016-06-26', 'img/noticia2.jpg'),
+(3, 'Médicos Sin Fronteras rechazará fondos de la UE', 'primaria', 'La ONG cree que el acuerdo con Turquía &quot;pone en peligro el propio concepto de refugiado&quot;', 'Médicos Sin Fronteras ha dado este jueves un golpe en la mesa. A partir de ahora esta ONG rechazará el dinero de la Unión Europea y de los 28 Gobiernos que la integran en protesta por una política que consideran centrada en “externalizar el control migratorio” y que “sienta un peligroso precedente”. Los fondos a los que renuncian supusieron el año pasado 63 millones de euros (19 millones de Bruselas y el resto de Ejecutivos comunitarios, incluidos 625.000 euros del español).', '2016-06-26', 'img/noticia3.jpg'),
+(4, 'La ONG Remar pide voluntarios para ir a Lesbos', 'primaria', 'La ONG Remar pide voluntarios para ir a Lesbos y fondos para dar raciones de comida a refugiados', 'La ONG española Remar, ha lanzado un mensaje de alerta este viernes porque necesita voluntarios que quieran colaborar en sus programas en Lesbos y Atenas y donaciones para mantener las 6.000 raciones de comida diarias que reparte allí a más de 3.000 refugiados.\r\n&quot;Es urgente cerrar el envío de 15 voluntarios para la primera quincena del mes de Julio para el apoyo al trabajo misionero de la ONG en estos campamentos griegos&quot;, explica la ONG Remar.\r\n\r\nTanto para donaciones económicas como para formar parte del equipo de voluntarios, Remar ha habilitado una dirección de correo electrónico (info@remar.org) a la que los interesados pueden dirigirse.', '2016-06-26', 'img/noticia4.jpg'),
+(5, 'Ayudamos a los 40.000 niños que huyen de la violencia', 'terciaria', 'Faluya: ayudamos a los 40.000 niños que huyen de la violencia', 'El incremento de la violencia en Faluya, Iraq, ha obligado a 85.000 familias a huir de sus casas para ponerse a salvo. En UNICEF calculamos que entre ellas se encuentran casi 40.000 niños que están llegando a los campamentos de desplazados de la zona.\r\nSalir de Faluya no es fácil, especialmente para los más de 8.200 hombres que han sido detenidos en los controles de seguridad y entre los que podría haber más de 1.200 menores de edad. El conflicto está provocando que muchas familias se separen sin saber cuándo volverán a verse. \r\n\r\nLos que consiguen llegar a los campamentos de refugiados se están encontrando con lugares al límite de su capacidad y donde tampoco es fácil conseguir alojamiento, agua y alimentos. Miles de niños pasan horas a pleno sol soportando las altas temperaturas.', '2016-06-26', 'img/noticia5.jpeg'),
+(6, 'Demasiado delgados para ser vacunados', 'terciaria', '', 'Moyanesh Almerew es una trabajadora sanitaria de la región de Amahra, en Etiopía, que está viendo con sus propios ojos cómo la sequía, agravada por el fenómeno de El Niño está afectando a los niños en este país. \r\nMoyanesh forma parte de un programa sanitario que recorre las comunidades de todo el país para llevar servicios básicos de salud a toda la población de Etiopía, que es mayoritariamente rural. \r\n\r\nSegún esta trabajadora, se han encontrado con muchos más casos de niños con desnutrición aguda grave este año que en otras ocasiones y los casos que están atendiendo son mucho peores. Entre ellos destaca Fikir, una bebé de 6 meses que Moyanesh conoció durante una de sus visitas.', '2016-06-26', 'img/terciaria.jpg'),
+(7, 'Conoce la historia de Mina', 'terciaria', 'Ayuda refugiados: conoce la historia de Mina', 'De todo lo que he escuchado durante el Día Mundial de los Refugiados, me quedo con una frase que nos ha dicho Mina durante nuestro primer Facebook Live: &quot;Con 15 años siento como que tengo muchos más, que he vivido muchos más&quot;. Y no miente.\r\nA su corta edad, Mina ya habla español, inglés, francés, algo de holandés y árabe, su lengua materna. Ha vivido en tres países incluido Iraq, donde nació y de donde huyó tras ver cómo mataban y mutilaban a vecinos y gente cercana.\r\n\r\nDesde la llegada de ISIS ya nadie de su círculo familiar, de religión cristiana, vive en Iraq. Están repartidos por distintos países y se ven poco. Los echa de menos.', '2016-06-26', 'img/noticia6.jpg');
 
 -- --------------------------------------------------------
 
@@ -116,13 +113,11 @@ CREATE TABLE `ong` (
 --
 
 INSERT INTO `ong` (`CIF`, `nombre`, `direccion`, `email`, `usuario`, `pass`, `telefono`, `imagen`) VALUES
-('000000000', ' World Wildlife Fund (WWF)', 'Gran Vía de San Francisco, 8', 'info@wwf.es', 'wwfSpain', 'wwfSpain', 913540578, ''),
-('000000001', 'Cruz Roja', 'Avenida Reina Victoria, 26', 'informa@cruzroja.es', 'CruzRoja', 'CruzRojaEspaña', 902222292, ''),
-('000000002', 'Save the Children', 'Calle Doctor Esquerdo, 138', 'online@savethechildren.es', 'SaveTheChildren', 'savethechildrenSpain', 915130500, ''),
-('000000003', 'Aldeas Infantiles', 'Calle Angelita Cavero, 9', 'mpardal@aldeasinfantiles.es', 'AldeasInfantiles', 'aldeasInfantSpain', 902332222, ''),
-('000000004', 'Amnistia Internacional', 'Fernando VI, 8', 'info@es.amnesty.org', 'AmnistiaInterSpain', 'amnistiaInterSpain', 913101277, ''),
-('000000005', 'Caritas', 'San Bernardo, 99', 'correo@caritas.es', 'CaritasEspaña', 'caritasEspaña', 914441000, ''),
-('123456789', 'nuevo', 'c/Juan de la Rosa, 1', 'prueba@prueba.com', 'newuser', 'hoola', 98765432, '');
+('G28567790', 'Manos Unidas', 'alle Barquillo, 38', 'manosUnidas@hotmail.com', 'manosUnidas', '$2y$11$AWVhr52RsjCFy', 0, 'img/manosUnidas.jpg'),
+('G28947653', 'GreenPeace', 'calle San. Bernardo, nº 107', 'greenpeace@gmail.com', 'greenpeace', '$2y$11$WDbLI0VSFQfz.', 0, 'img/greenpeace-logo.jpg'),
+('G79362497', 'Save The Children', 'Calle de Mauricio Legendre, 36,', 'saveChildrens@hotmail.com', 'saveChildren', '$2y$11$ghKxbMnkKMJel', 0, 'img/STC.png'),
+('G84451087', 'Unicef', 'C/ Barquillo, 38', 'unicef@hotmail.com', 'unicef', '$2y$11$nHO4cSFRtCSqa', 0, 'img/unicef.png'),
+('Q2866001G', 'Cruz Roja', 'RAFAEL VILLA, S/N 28023', 'cruzRoja@hotmail.com', 'CruzRoja', '$2y$11$0NTx6pLsGUvV5', 0, 'img/layout_set_logo.png');
 
 -- --------------------------------------------------------
 
@@ -134,7 +129,7 @@ CREATE TABLE `producto` (
   `idProducto` int(10) NOT NULL,
   `stock` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
+  `nombre` varchar(80) NOT NULL,
   `descripcionCorta` mediumtext NOT NULL,
   `descripcionLarga` longtext NOT NULL,
   `CIFOng` varchar(9) NOT NULL,
@@ -146,10 +141,22 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`idProducto`, `stock`, `precio`, `nombre`, `descripcionCorta`, `descripcionLarga`, `CIFOng`, `imagen`) VALUES
-(1, 12, 3, 'Pulseras estrellas', 'Hacer feliz cuesta muy poco.', 'Pulseritas en varios colores: azul, rosa o marrón con una estrella por cada persona a la que le hayas colocado una sonrisa.', '000000002', 'img/pulseras.jpg'),
-(2, 33, 2, 'Pines solidarios', 'Pines solidarios de varios colores', 'Un pin carriñosón para ponerlo encima del corazón.', '000000000', 'img/pines.jpg'),
-(3, 45, 5, 'Llaveros incripción', 'Un bonito llavero con una incripción', 'Recuerda cuantas sonrisas regalaste con este llavero que te compraste.', '000000003', 'img/llavero.jpg'),
-(4, 20, 3, 'Bolígrafo solidario', 'Bolígrafo de colorines  solidario.', 'Con este boli alegre y alocado dibujarás sonrisas con el dinero proporcionado.', '000000002', 'img/boligrafo.jpg');
+(18, 500, 15, 'Pulsera solidaria', 'pulsera solidaria', 'pulsera solidaria', 'G28567790', 'img/pulseras.jpg'),
+(19, 500, 25, 'Caja de experiencias', 'caja de experiencias', 'Greenpeace crea la caja de experiencias en la que puedes regalar a tus familiares y amigos la experiencia de proteger el Ártico y muchas experiencias más. Porque al proteger el Ártico protegerás las playas del Cantábrico, las montañas de Navacerrada y los osos polares o los osos pardos.  Regalarás un trozo de futuro al planeta.', 'G28947653', 'img/caja-de-experiencias.jpg'),
+(20, 450, 22, 'Caja Especial Ballenas', 'caja especial de ballenas', 'Una caja perfecta para disfrutar, mejor en compañía o dedicándote un ratito especial para celebrar que la has recibido. Y si la regalas, sería genial. No hay nada como hacer feliz a alguien.', 'G28567790', 'img/caja-especial-ballenas.jpg'),
+(21, 500, 4, 'Pulseras Unicef', 'pulsera solidaria', '3 modelos de pulsera de tela con colores vivos y diseños originales: motivos étnicos, infantiles o adornados con frases. Un regalo solidario perfecto para quien tú quieras, incluso para ti, porque te lo mereces.', 'G28567790', 'img/pulseras_solidarias_tres-600x600.jpg'),
+(22, 250, 12, 'Taza Salvar a las ballenas', 'Taza', 'De las diferentes especies de ballenas que existen, casi todas sus poblaciones se encuentran reducidas, algunas al borde de la extinción. ¡Ayúdanos a protegerlas con nuestra taza!', 'G28947653', 'img/taza-ballenas.jpg'),
+(23, 300, 3, 'Espejo Salvar a las ballenas', 'espejo', 'espejo para salvar a las ballenas', 'G28947653', 'img/espejo.jpg'),
+(24, 350, 12, 'Abanico', 'abanico de la cruz roja', 'UN MOMENTO DE RESPIRO. Gracias por dar un poquito de aire a los que más lo necesitan. Abanico de madera y tela. Diseñado por Chus Burés, España', 'Q2866001G', 'img/abanico.jpg'),
+(25, 650, 6, 'Bateria portatil', 'bateria portatil', 'Batería portátil para móvil. No te vuelvas a quedar con el móvil descargado por falta de encontrar un enchufe. Con esta batería podrás recargar tú móvil al menos una vez en cualquier lugar', 'Q2866001G', 'img/bateria.jpg'),
+(26, 1000, 4, 'Boligrafo solidario', 'boligrafio', 'boligrafio solidario de unicef, compralo y ayuda a los niños', 'G84451087', 'img/boligrafo.jpg'),
+(27, 400, 25, 'Camiseta Save the Childrens', 'camiseta ong', 'camiseta ong save the children', 'G79362497', 'img/safe the children camiseta.jpg'),
+(28, 200, 20, 'Camiseta Cruz Roja', 'camiseta de la cruz roja', 'camiseta solidaria de la cruz roja', 'Q2866001G', 'img/camisacruz.jpg'),
+(29, 300, 4, 'Bidon', 'bidon para agua', 'Bidón para agua que te servirá para tus actividades deportivas. Color rojo metalizado con logo Cruz Roja', 'Q2866001G', 'img/bidon.jpg'),
+(30, 300, 6, 'Llavero Skipping', 'Llavero Skipping', 'Llavero solidario de aleación de Zinc, con tornillería y cable de acero recubierto de plástico para el cierre, con grabado láser de las letras UNICEF. Modelos niña y niño.', 'G84451087', 'img/llaveros_skipping-600x600.jpg'),
+(31, 350, 7, 'Cuaderno Unicef', 'Cuaderno Unicef', 'Estos cuadernos solidarios tienen el tamaño ideal para llevarlos siempre contigo', 'G84451087', 'img/cuaderno_pequeno_flower_-600x600.jpg'),
+(32, 200, 18, 'Paraguas', 'paraguas unicef', '¿Quién dijo que un paraguas no podría ser un buen regalo solidario? Este producto con logotipo de UNICEF lo es, y además te garantiza una buena protección para los días de lluvia. Material poliéster.', 'G84451087', 'img/paraguas_blanco-600x600.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -159,15 +166,15 @@ INSERT INTO `producto` (`idProducto`, `stock`, `precio`, `nombre`, `descripcionC
 CREATE TABLE `proyecto` (
   `idProyecto` int(10) NOT NULL,
   `CIFOng` varchar(9) NOT NULL,
-  `fechaCreacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechaCreacion` datetime NOT NULL,
   `dineroNecesario` int(11) NOT NULL,
   `dineroAcumulado` int(11) NOT NULL DEFAULT '0',
-  `nombre` varchar(50) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
   `descripcionCorta` mediumtext NOT NULL,
   `descripcionLarga` longtext NOT NULL,
   `imagen` varchar(50) NOT NULL,
   `numVoluntarios` int(11) NOT NULL,
-  `fechaFin` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `fechaFin` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -175,19 +182,16 @@ CREATE TABLE `proyecto` (
 --
 
 INSERT INTO `proyecto` (`idProyecto`, `CIFOng`, `fechaCreacion`, `dineroNecesario`, `dineroAcumulado`, `nombre`, `descripcionCorta`, `descripcionLarga`, `imagen`, `numVoluntarios`, `fechaFin`) VALUES
-(9, '000000000', '2016-06-16 19:32:12', 15000, 0, 'Conservación del Ecosistema', 'World Wildlife Fund (WWF)', 'ILos ecosistemas forestales ocupan en la actualidad unos 3.866 millones de hectáreas, casi una tercera parte de las tierras emergidas del planeta, lo que equivale a la mitad de la superficie que ocupaban hace unos 8.000 años.De lo que nos queda de superficie forestal original, sólo la quinta parte ha llegado hasta nuestros días en un estado de conservación favorable, lo que podríamos denominar como fronteras forestales, últimos bosques sin alteración humana significativa.Solamente en la pasada década se produjo una pérdida neta de superficie forestal de 93,9 millones de hectáreas (5,6 millones de campos de fútbol al año). Durante este mismo periodo se transformaron bosques naturales en plantaciones agrícolas y forestales a un ritmo de 16,1 millones de hectáreas al año, el 94 % en zonas tropicales, siendo las plantaciones agrícolas las responsables del 70% de esta transformación.Para intentar detener su degradación y conservar los ecosistemas forestales el Programa de Bosques de WWF está tomando las siguientes medidas:  - Promueve el consumo legal y responsable de productos forestales.- Apoya la certificación forestal FSC que garantiza el uso sostenible de los bosques.- Incide en la necesidad de impulsar acciones técnicas y políticas claras y contundentes para recuperar bosques y mejorar la calidad de aquellos que aún perduran y que están alejados de su óptimo ecológico.- Realiza proyectos piloto de restauración de hábitats forestales en colaboración con diversas organizaciones, (empresas privadas, otras ONG, Administraciones Públicas…), en los que colaboran numerosos voluntarios.- Logra la protección de millones de hectáreas en los principales bosques desprotegidos del planeta, como los de la cuenca del Amazonas o Borneo.- Dentro de las áreas degradadas nos preocupan especialmente los incendios forestales, que atendemos a través de una línea de trabajo que incluye investigación, presión política y la restauración de zonas incendiadas.', 'img/panda.png', 50, '2016-06-17 17:09:24'),
-(10, '000000000', '2016-06-16 19:36:48', 10000, 0, 'Biodiversidad Amenazada', 'World Wildlife Fund (WWF)', 'Si bien todavía no existe unanimidad entre los expertos sobre cuántas especies pueden existir en la tierra (se habla de entre 5 y 30 millones aunque algunos autores hablan de hasta cien millones) al menos 1,4 millones poseen una denominación específica. Aunque cada año se descubren nuevas especies particularmente en las zonas más remotas del planeta (la pantera nebulosa descubierta por un equipo de WWF es un buen ejemplo), lo cierto es que la velocidad a la que desaparecen es mucho mayor. Según la UICN cada año se extinguen en el planeta entre 10.000 y 50.000 especies. Tanto es así que los científicos hablan ya de una sexta extinción masiva de especies, la primera que se produciría en la tierra desde la desaparición de los dinosaurios. Las principales causas de este proceso están ligadas a la acción del ser humano: fragmentación y destrucción del hábitat, sobreexplotación de recursos y muerte directa (intencionada o no), introducción de especies invasoras, comercio de especies y cambio climático. La conservación de las grandes especies de fauna ha sido siempre una gran preocupación para WWF, que en la actualidad trabaja con más de un centenar especies y con proyectos en los cincos continentes. Especies como los grandes simios, los elefantes, el panda, el tigre, las tortugas marinas, los cetáceos o el lince ibérico son prioritarias para nuestra organización.', 'img/panda.png', 50, '2016-06-17 17:09:24'),
-(11, '000000001', '2016-06-16 19:41:59', 10500, 650, 'Infancia Éxito Escolar', 'Cruz Roja', 'El fracaso escolar en España y la malnutrición de los escolares debido a la crisis económica hace que desde Cruz Roja dediquemos nuestros esfuerzos a contribuir al éxito escolar de niños y niñas en dificultad social, incidiendo en los factores de índole personal y social que lo favorecen. Más de 4.000 voluntarios de Cruz Roja acompañan todos los días a niños y niñas de familias con dificultades económicas, ayudándoles a que su rendimiento escolar no se resienta por la situación familiar.', 'img/layout_set_logo.png', 50, '2016-06-17 17:09:24'),
-(12, '000000001', '2016-06-16 19:42:55', 8000, 0, 'Ayuda Terremoto Ecuador', 'Cruz Roja', 'La magnitud del terremoto en las costas de Ecuador exige actuar rapidamente, para llegar a todas las zonas afectadas, atender a los miles de heridos y de afectados que se han quedado en la calle.', 'img/layout_set_logo.png', 50, '2016-06-17 17:09:24'),
-(13, '000000002', '2016-06-16 19:43:23', 13200, 0, 'No más muertes de niños', 'Save the Children', 'Europa está viviendo la peor crisis de refugiados desde la Segunda Guerra Mundial. Estamos siendo testigos del desplazamiento por mar y tierra de miles de personas, incluidos niños y niñas en condiciones extremadamente inseguras e inhumanas. En estos desplazamientos los niños y las niñas mueren ahogados en el mar o asfixiados en caminones, se ven sometidos a las mafias, a la explotación y la trata de personas, padecen hambre, frío, falta de sitios seguros donde dormir, falta de asistencia médica y situaciones de violencia. El final de esta crisis de refugiados tiene mucho que ver con la voluntad política que exista realmente por acabar con ella. Creemos que esta situación tiene solución y por eso hemos preparado un plan de acción con medidas concretas para: - Mantener las operaciones de búsqueda y rescate en el Mediterráneo: salvar vidas sigue siendo la prioridad. - Establecer y reforzar sistemas de acogida y apoyo adecuados, asegurando el respeto de los derechos humanos y la dignidad de las personas. - Políticas de reubicación y reasentamiento: los países europeos pueden y deben hacer mucho más para ofrecer refugio a la gente que necesita protección. Tienen la obligación legal, política y moral de hacerlo. - Mejorar las vías seguras y legales para solicitar asilo europeo en los países de origen o tránsito y asegurar unas políticas de retorno basadas en el respeto de los derechos humanos. - Atajar las causas de la migración en su origen, aumentar la respuesta regional y priorizar un acuerdo negociado para el fin de la crisis de Siria. ', 'img/STC.png', 50, '2016-06-17 17:09:24'),
-(14, '000000003', '2016-06-16 19:44:16', 9000, 1650, 'El 35% de los adolescentes tienen claro su futuro', 'Aldeas Infantiles', 'De esta encuesta también se extrae el perfil del adolescente. La mayor parte de los participantes se ha definido como alegre, rebelde y con sentido del humor. La energía vital también ha estado presente en un gran número de encuestados. Con el fin de reflexionar sobre las conclusiones de este sondeo, Aldeas ha reunido a diecisiete alumnos de Secundaria, uno por Comunidad Autónoma, en las III Jornadas de Jóvenes “Los jóvenes nos paramos a pensar”, celebradas en Madrid, esta mañana.   Los objetivos de este encuentro son los de fomentar el derecho de participación de los adolescentes en la sociedad y propiciar que sus opiniones sean tenidas en cuenta. Hablamos de valores Además de analizar los resultados de la encuesta, los estudiantes han tenido la oportunidad de dialogar acerca de los valores protagonistas de la presente edición del programa educativo “Párate a pensar”: la prudencia, la audacia y la toma de decisiones.  Sobre la prudencia, los jóvenes han manifestado la importancia de ser prudentes, “sobre todo cuando lo que haces afecta a otras personas o está en juego algo importante, especialmente su seguridad”. También han reflexionado sobre la necesidad de diferenciar el ser prudente del miedo a asumir riesgos: “Tenemos que aprender los límites de la prudencia, ya que vemos que tampoco hay que serlo en exceso”.  Respecto a la audacia, los participantes han coincidido en que se trata de un término bastante confuso. Tienen claro, eso sí, que “es un valor que se aplica en la vida en general y que es importante para defender los intereses de los demás y no sólo los propios”. Lo han definido como “la forma de enfrentarse a las situaciones con inteligencia” y, aunque piensan que hay cierta predisposición a nacer audaz, lo consideran un valor que “puede desarrollarse a partir de experiencias o decisiones que tengamos que tomar”.  Por último, respecto a la toma de decisiones, todos admiten tomarlas a menudo, pero reconocen no hacerlo en aquellos asuntos que consideran más importantes. Les gustaría “participar más y ser escuchados” y reclaman “estar más informados”.  “Los adolescentes que estamos hoy aquí pedimos que nos motiven, que valoren nuestro esfuerzo y que nos dejen tomar decisiones desde la infancia, y no sólo cuando llega el momento de decidir nuestro futuro académico o laboral”, han concluido.   Los programas educativos de Aldeas Infantiles SOS para Primaria y Secundaria llegan a los colegios e institutos españoles gracias a la colaboración de ECOEMBES. En todas las ediciones, la organización ha invitado a alumnos, profesores y padres a reflexionar juntos en torno a diversos valores como el compromiso, la tolerancia, la inteligencia emocional o la solidaridad. Estos materiales han llegado, en el último curso escolar, a 202.700 alumnos de Infantil y Primaria (entre 4 y 12 años) y 150.000 de Secundaria (entre 12 y 16 años).', 'img/Logo_AldeasInfantilesSOS.jpg', 50, '2016-06-17 17:09:24'),
-(15, '000000002', '2016-06-16 19:44:51', 9050, 250, 'No más muertes en el Mediterráneo', 'Save the Children', 'Muchas gracias por tu interés en esta campaña. Pese a que esta recogida de firmas ya está cerrada, nuestro trabajo para con los migrantes que están llegando por miles a las fronteras europeas continua, centrándonos especialmente en los más pequeños que son los más vulnerables. ¿Qué estamos haciendo? Estamos trabajando en toda la ruta que siguen los refugiados, y también en los países de los que están huyendo. Descubre más sobre el trabajo de Save the Children para ayudar a los refugiados.  Además de atender a los niños y sus familiares, también estamos trabajando a nivel estructural para ponerle una solución a esta crisis de refugiados. ¿Qué puedes hacer tú? En estos momentos estamos recogiendo donaciones para ofrecer a los niños y sus familiares atención, alimento y apoyo psicológico a su llegada tanto a las fronteras como las costas européas. Por eso te pedimos que, si puedes, hagas tu donación para ayudar a los niños refugiados. ', 'img/STC.png', 50, '2016-06-17 17:09:24'),
-(16, '000000004', '2016-06-16 19:45:25', 6500, 240, 'Refugiados en España', 'Amnistia Internacional', 'Madrid.- Un sistema discriminatorio, arbitrario, obsoleto e ineficaz que puede llevar a las personas a la indigencia a medio plazo. Así describe Amnistía Internacional el sistema de acogida y asilo en España, que recibe estos días, a las primeras personas refugiadas procedentes de Grecia. La organización lanza un nuevo informe, “El asilo en España: un sistema poco acogedor” en la que pide al gobierno que tome medidas concretas para reformar el sistema, que no se adecua a los estándares internacionales ni al apoyo social a darles la bienvenida, tal y como demuestra la reciente encuesta de la organización, así como diversas iniciativas impulsadas por ayuntamientos y Comunidades autónomas. "España no está dando la bienvenida que se merecen a las personas que huyen de la guerra y la persecución, de manera que puedan acceder a una acogida digna, un procedimiento de asilo justo y efectivo y su plena integración", afirma Esteban Beltrán, director de Amnistía Internacional España. "Tanto las personas que llegan por Ceuta y Melilla, y que se encuentran con un limbo en el que su derecho a la libre circulación a la Península está limitado y restringido; como aquellas que llegan por otras vías de manera espontánea, o los pocos que el gobierno trae a través del reasentamiento y la reubicación, tienen algo en común: las dificultades que se encuentran para su acogida digna y su posterior integración en el país", añade. La nacionalidad, una cuestión de privilegio. La organización denuncia además como algunas nacionalidades tienen mayores dificultades para que sus peticiones de asilo sean estudiadas, así como para acceder a los procedimientos de asilo que otras. Recientemente, el Comité para la Eliminación de la Discriminación Racial de Naciones Unidas, en su último informe sobre España, ha mostrado preocupación por el hecho de que solicitudes de asilo de personas provenientes de países en conflicto, en particular de países de África subsahariana, suelen tomar más tiempo para ser resueltas.  A esto habría que añadir un “criterio de prudencia”, que no se atiene a normas internacionales de derechos humanos, y por el cual muchas peticiones no se estudian a la espera de que la situación de derechos humanos mejore en los países de origen. Así, personas procedentes de Mali, Ucrania o de Territorios Ocupados Palestinos, entre otras, pueden ver su petición de asilo paralizada. España da la espalda a la crisis: A pesar de encontrarnos ante la crisis más grave de personas refugiadas tras la 2ª Guerra Mundial, las autoridades españolas de diferentes gobiernos no han mostrado voluntad política para compartir su responsabilidad con el resto de miembros de la Unión Europea. La Ley de Asilo en España está obsoleta, y no ha incorporado las últimas Directivas Europeas en materia de asilo. Además, el reglamento de desarrollo de la Ley de asilo, seis años después, ni siquiera existe, por lo que las ayudas previstas para estas personas se están otorgando de manera desigual y arbitraria a través de normativa de menor rango. “Mientras las personas esperan, algunas durante años, a que se resuelva su solicitud, hemos visto cómo las ayudas previstas para su acogida son insuficientes y no se adaptan a sus necesidades, algo que puede finalmente llevar a muchas de ellas a la indigencia”, asegura Virginia Álvarez, responsable de Política Interior en Amnistía Internacional e investigadora del informe. Amira (nombre ficticio), de nacionalidad libia, tuvo que huir de su país por la persecución sufrida por sus creencias y activismo en favor de los derechos humanos de las mujeres. Solicitó asilo en marzo de 2014 y todavía sigue a la espera de una resolución. Durante los primeros seis meses obtuvo una ayuda, pero al cabo de ese tiempo se quedó en la calle sin más recurso que los 340 euros que se entrega en concepto de “ayuda de salida”. Por otra parte la falta de entrevistas sistematizadas que tengan en cuenta los criterios de vulnerabilidad provoca que algunas de ellas no reciban la ayuda específica que necesitan. Maryam es un ejemplo. De nacionalidad siria, huyó de la guerra y de la violencia y maltrato por parte de su pareja. Durante el camino fue víctima de un intento de agresión sexual. Llegó sola a España, en una situación especialmente vulnerable. A pesar de los problemas que presentaba, no ha sido debidamente identificada ni ha tenido acceso una atención especializada ni apoyo psicológico. En la actualidad vive en un recurso para personas sin hogar.    El informe documenta también como, tras los primeros meses de acogida, las personas solicitantes de asilo quedan abandonadas a su suerte, enfrentándose a múltiples obstáculos como, por ejemplo, en el acceso a la vivienda. Cuando Drias, (nombre ficticio) sirio solicitante de asilo, habló con Amnistía Internacional, llevaba 9 meses en un centro de acogida de la administración, junto a su mujer, su hijo de 12 años y su hija de 7 años. Les habían comunicado ya que debían abandonar el centro, y la búsqueda de piso estaba siendo tan complicada que finalmente habían acudido a una agencia inmobiliaria a la que habían pagado 600 €, el dinero que el centro había ofrecido en concepto de “ayuda de salida”. Contaron a Amnistía Internacional que a la hora de alquilar un piso todo el mundo le pedía contrato, y que estaba esperando que la ONG que les apoyaría por unos meses más para pagar la fianza y el primer mes. Finalmente, una vez acabada la segunda fase de acogida, las personas refugiadas quedan desamparadas, aun cuando siguen siendo solicitantes de protección internacional. Tampoco para las que la han obtenido existen ayudas específicas para su integración en el país.  Recursos desaprovechados: El laberinto al que se enfrentan las personas refugiadas y solicitantes de asilo se ve acrecentado por el hecho de que no existe una verdadera coordinación en el sistema de acogida en los niveles nacional, autonómico y regional, de manera que no se están utilizando de forma eficiente todos los recursos actualmente existentes, y que se han puesto a disposición de la administración central. La organización tiene en marcha un manifiesto en el que ya han firmado más de 50.000 personas y 900 organizaciones para recordar a las autoridades españolas que la gente quiere mostrar su solidaridad y exigir #YoAcojo.  Todo este apoyo social debe tener una respuesta por parte de las autoridades. Por un lado, el gobierno debe incrementar las cifras de acogida, agilizar el sistema de asilo y aprovechar los recursos que las Comunidades autónomas y entidades locales están ofreciendo. Por otro lado, las nuevas autoridades gubernamentales y parlamentarias que sean elegidas tras los comicios de junio deben evaluar y reformar en profundidad el sistema de asilo y acogida para que sea acorde con los estándares internacionales.', 'img/Logo Amnistía Internacional_2.jpg', 50, '2016-06-17 17:09:24'),
-(17, '000000005', '2016-06-16 19:46:08', 500000, 125350, 'Plan de Reconstrucción', 'Caritas', 'Cáritas Ecuador ha impulsado una operación pastoral de hermanamiento nacional entre parroquias para acompañar el desarrollo del plan de reconstrucción tras el terremoto del 16 de abril. Bajo el lema “Organizar la Caridad – Iglesias Hermanas” este iniciativa quiere facilitar la “asociación” fraterna entre Diócesis no afectadas y parroquias afectadas por el seísmo. Esta propuesta pastoral se enmarca dentro de la estrategia de trabajo integral preparada por Cáritas Ecuador y la red internacional Cáritas para organizar durante los próximos tres años la atención y respuesta permanente a los territorios más golpeados por la emergencia. Con ese objetivo, se prevé que, a la hora de establecer asociaciones entre Diócesis “ayudantes” y las parroquias afectadas, unas 30 parroquias acompañen a una afectada. Cáritas Española aporta 500.000 euros al plan de emergencia. El plan de post-emergencia y reconstrucción (Emergency Appeal, EA) diseñado por Cáritas Ecuador cuenta con un presupuesto de 1,4 millones de euros, más de la tercera parte del cual será cubierto por Cáritas Española, que aportará al mismo 500.000 euros. Durante los próximos 12 meses, las acciones previstas se centrarán en la puesta en marcha de soluciones integrales, duraderas y dignas para 700 familias sin recursos (unas 3.500 personas) que fueron gravemente golpeadas por el seísmo del pasado 16 de abril. Colaboración entre entidades de Iglesia. Junto al hermanamiento de parroquias, la Cáritas Ecuatoriana, la Conferencia Ecuatoriana de Religiosos (CER) y la Provincia Jesuita del Ecuador han sumado sus capacidades y estructuras territoriales para trabajar de manera conjunta en las acciones de post-emergencia para los damnificados y comunidades más vulnerables. “Como Iglesia –se señala en un comunicado conjunto de las tres organizaciones—reiteramos nuestro compromiso y vocación por acompañar a nuestro pueblo en las situaciones de mayor dolor, con una presencia próxima y buscando una eficacia apostólica para responder a sus necesidades más urgentes”. La nota añade: “Ante esta realidad nos sentimos interpelados para dar un mensaje de genuina comunión generando los puentes necesarios para actuar como cuerpo eclesial, fortaleciendo nuestras capacidades, y dando mejores frutos de manera conjunta”. La colaboración de las tres entidades se centrará en tres de los ejes prioritarios incluidos en el plan de reconstrucción diseñado por Cáritas Ecuador: - Acompañamiento espiritual y psicológico a las víctimas. - Reconstrucción de vivienda digna y fortalecimiento del tejido social comunitario. - Generación de medios de vida para la autosuficiencia de familias y comunidades. Además, estas organizaciones contarán con el apoyo de la Pontificia Universidad Católica del Ecuador para brindar asesoramiento técnico de profesores y estudiantes especializados en las áreas de trabajo señaladas. Campaña de solidaridad. Cáritas Española mantiene activa su campaña de solidaridad con los damnificados bajo el lema “Cáritas con Ecuador”, a la que es posible hacer aportaciones a través del teléfono 900.33.99.99, de distintas cuentas corrientes abiertas y de la propia web de Cáritas Española.', 'img/09e48e4c.jpg', 50, '2016-06-17 17:09:24'),
-(18, '000000002', '2016-06-16 19:46:27', 300000, 0, 'Prueba', 'Prueba', 'Introduce descripcion larga...', 'img/imagen.png', 50, '2016-06-17 17:09:24'),
-(19, '000000002', '2016-06-16 19:47:43', 300000, 0, 'Prueba', 'Prueba', 'Introduce descripcion larga...', 'img/imagen.png', 50, '2016-06-17 17:09:24'),
-(20, '000000002', '2016-06-16 19:50:28', 300000, 0, 'Prueba', 'Prueba', 'Introduce descripcion larga...', 'img/imagen.png', 50, '2016-06-17 17:09:24'),
-(23, '000000001', '2016-06-16 20:23:27', 3000000, 0, 'Prueba', 'Introduce descripcion corta...', 'Introduce descripcion larga...', 'img/Thankyou.png', 50, '2016-06-17 17:09:24');
+(41, 'G28567790', '2016-06-26 19:49:53', 55000, 950, 'apoyo psicosocial en un campo de refugiados de Sudán', 'Damos apoyo psicosocial en un campo de refugiados de Sudán de Sur', 'El Servicio de Ayuda de los Jesuitas a los Refugiados -JRS-, realiza actividades de apoyo en los cuatro campos de refugiados de Maban County .El campode refugiados de Doro, al ser el más numeroso de los cuatro, no dispone de espacio suficiente para desarrollar actividades agrícolas o ganaderas. Además, por el hecho de ser aquel en el que más grupos étnicos conviven y el que está más próximo a la población local, es el que más conflictos internos tiene: familias desesctructuradas, abuso del alcohol, violencia de género y sexual...\r\n\r\nLas personas con discapacidad, los ancianos y las mujeres son los más vulnerables. Como en Maban no hay ningún organismo humanitario que de apoyo psicosocial, nuestro socio local, el JRS, que se está haciendo cargo de actividades educativas en los otros campos, además de correr con todos los gastos de mantenimiento, personal, infraestructuras, etc de los campos de refugiados, piden ayuda a Manos Unidas para dar apoyo psicosocial a los refugiados del campo de Doro.\r\n\r\nEl proyecto beneficia directamente a casi 5.000 personas', 'img/p2manosUnidas.jpg', 250, '2016-11-30 00:00:00'),
+(42, 'G28947653', '2016-06-26 19:56:05', 60000, 2650, 'Salvar el Artico', 'Salvar el artico', 'El Ártico es hogar de una vida silvestre increíble, desde majestuosos osos polares hasta morsas y narvales. Pero todas estas especies del Ártico dependen del hielo marino para poder sobrevivir. Y el hielo está desapareciendo a una velocidad aterradora.\r\n\r\nSin hielo marino los osos polares no pueden cazar, descansar, cuidar sus crías. Su vida se ve amenazada. Las osas madre débiles y hambrientas tienen problemas para reproducirse. Sus cachorros deben luchar superando muchos obstáculos para poder sobrevivir hasta llegar a la edad adulta.\r\nA menos que tomemos medidas pronto, los expertos advierten que los osos polares podrían desaparecer por completo del Ártico en los próximos 100 años. Actúa ahora para proteger su hogar.', 'img/p1greenpeace.jpg', 200, '2016-09-30 00:00:00'),
+(43, 'Q2866001G', '2016-06-26 20:00:32', 75000, 5000, 'Seguridad Alimentaria y Medios de Vida', '', 'Creemos que es necesario abordar las causas subyacentes de la inseguridad alimentaria, la pobreza y la desigualdad; trabajando para que las personas y comunidades puedan generar recursos e ingresos para satisfacer sus necesidades diarias (una alimentación sana y nutritiva en cantidad suficiente, vivienda, salud, educación...)   \r\n \r\nPara ello es necesario promover medios de vida sostenibles que permitan a las personas hacer frente y recuperarse de situaciones negativas (como desastres naturales y problemas económicos o sociales) mejorando su bienestar y el de las futuras generaciones, sin debilitar el medio ambiente o la base de recursos naturales.\r\n ', 'img/p1Cruzroja.png', 200, '2016-09-30 00:00:00'),
+(44, 'G79362497', '2016-06-26 20:03:55', 500000, 0, 'No más muertes de niños', 'No más muertes de niños tratando de llegar a nuestras fronteras', 'uropa está viviendo la peor crisis de refugiados desde la Segunda Guerra Mundial.\r\n \r\nEstamos siendo testigos del desplazamiento por mar y tierra de miles de personas, incluidos niños y niñas en condiciones extremadamente inseguras e inhumanas.\r\n \r\nEn estos desplazamientos los niños y las niñas mueren ahogados en el mar o asfixiados en caminones, se ven sometidos a las mafias, a la explotación y la trata de personas, padecen hambre, frío, falta de sitios seguros donde dormir, falta de asistencia médica y situaciones de violencia.\r\n\r\nEl final de esta crisis de refugiados tiene mucho que ver con la voluntad política que exista realmente por acabar con ella. Creemos que esta situación tiene solución y por eso hemos preparado un plan de acción con medidas concretas', 'img/p1SaveChildren.JPG', 500, '2017-01-31 00:00:00'),
+(45, 'G79362497', '2016-06-26 20:05:33', 150000, 1589, 'Ayuda a los niños de Etiopía', '', 'os niños y niñas en Etiopía están en riesgo de hambruna provocada por la sequía que sufre el país, la peor en los últimos 50 años. Muchos padres están llevando a sus hijos a los centros sanitarios y de alimentación en busca de ayuda, pero necesitamos medios para proteger a los niños contra el creciente riesgo de desnutrición y falta de agua.\r\n\r\nTrabajamos en Etiopía desde 1930 y estamos presentes en el 70% de las zonas más afectadas. Estamos suministrando agua, comida, medicinas y los elementos básicos a las familias que han perdido sus ingresos. \r\n\r\nYa estamos en terreno salvando vidas, nuestra experiencia y conocimientos hace que estemos preparados para marcar la diferencia en Etiopía. Pero no podemos hacer esto sin ti.', 'img/p2saveChildren.JPG', 350, '2016-10-31 00:00:00'),
+(46, 'G79362497', '2016-06-26 20:06:55', 550000, 0, 'Ayúdanos a llevar agua potable a Humad', '', 'l acceso a agua potable es uno de los Derechos de la infancia, pero miles de niños como Humad solo tienen agua contaminada para beber. A consecuencia de ello, muchos niños enferman y su salud se deteriora.\r\n\r\nEvitarlo es posible, y con tu apoyo podemos hacerlo realidad. Haciéndote socio de Save the Children estarás ayudándonos a construir pozos y bombas de agua que proporcionen a estos niños y a sus comunidades el agua potable que necesitan para crecer sanos.\r\n\r\nHazte socio hoy de Save the Children y consigamos juntos que miles de niños como Humad puedan beber agua potable.', 'img/p3saveChildren.JPG', 450, '2016-11-28 00:00:00'),
+(47, 'G84451087', '2016-06-26 20:12:52', 55000, 0, 'Terremoto en Ecuador', '', 'El terremoto de 7,8 grados del pasado día 16 y las réplicas que continúan asolando Ecuador han afectado a más de 250.000 niños y niñas.\r\n \r\nDesde el primer momento, UNICEF está distribuyendo suministros de emergencia para paliar las necesidades más urgentes de agua, saneamiento, protección y educación. Entre ellos, 20.000 pastillas potabilizadoras de agua para que los niños y sus familias puedan beber agua limpia, 4.800 mosquiteras tratadas con insecticida para evitar la picadura del mosquito que transmite el virus del Zika o 250.000 cápsulas de vitamina A para prevenir que los niños enfermen por desnutrición.\r\n \r\nPero hacen falta muchos más recursos para ayudar a todos los niños que lo necesitan. \r\n \r\nLos niños y niñas de Ecuador necesitan AYUDA URGENTE. Dona ahora. ', 'img/p1unicef.jpg', 100, '2017-01-19 00:00:00'),
+(48, 'G84451087', '2016-06-26 20:13:43', 100000, 550, 'Terremoto de Nepal', '', 'Tras sufrir dos terremotos en un intervalo de 17 días, los niños de Nepal y sus familias siguen necesitando toda la ayuda posible.\r\n\r\nEn UNICEF estamos trabajando desde el primer día para que los millones de niños afectados por los terremotos sufran lo menos posible sus consecuencias. Nuestro objetivo es protegerlos en esta terrible situación y para conseguirlo tú eres imprescindible.\r\n\r\nNuestro equipo de más de 200 personas está trabajando en Katmandú y alrededores, para proporcionar atención médica, tiendas de campaña, agua potable y otros suministros vitales a los niños y sus familias.\r\n\r\nPor favor, dona ahora para ayudar a los niños que siguen en grave peligro. Te necesitan.  ', 'img/p2unicef.jpg', 200, '2016-12-15 00:00:00'),
+(49, 'G84451087', '2016-06-26 20:14:49', 500500, 15000, 'Ayúdanos a vacunar al 100% de los niños', '', 'En el mundo, 1 de cada 5 niños no recibe las vacunas que podrían salvarle la vida. Y las consecuencias son terribles: cada 20 segundos muere un niño por enfermedades completamente prevenibles como el sarampión y tosferina. \r\n\r\nEn UNICEF creemos que todos los niños tienen derecho a ser vacunados y no pararemos hasta conseguirlo. Por ello, viajamos en barco, coche o burro a las zonas más remotas y pobres del mundo.\r\n\r\nTú puedes ser parte de este increíble trabajo. ¿Nos ayudas a vacunar al 100% de los niños ? \r\n\r\nPor favor, haz un donativo ahora.', 'img/unicefp4.jpg', 450, '2017-03-15 00:00:00'),
+(50, 'G84451087', '2016-06-26 20:16:28', 85000, 60000, 'Fondo de emergencias', '', 'UNICEF actúa en más de 200 emergencias al año, en más de 90 países. Las primeras horas después de una emergencia son fundamentales para salvar vidas y garantizar la protección de los niños, el Fondo de emergencias nos permite tener recursos y poder actuar de manera rápida... \r\n\r\nCon tu contribución, podemos enviar recursos de forma inmediata ante  cualquier emergencia  o crisis humanitaria. Nuestro llamamiento de emergencias para 2016 es uno de los mayores de nuestra historia: necesitamos fondos para ayudar a 43 millones de niños en más de 70 países. Ayúdanos a ayudarles.', 'img/donacion-fondo-emergencias.jpg', 250, '2017-04-24 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -216,15 +220,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`DNI`, `nombre`, `apellidos`, `direccion`, `cp`, `usuario`, `pass`, `email`, `fechaNacimiento`, `avatar`, `sexo`, `telefono`, `tipo`) VALUES
-('000000000', 'WWF España', '', 'Gran Vía de San Francisco, 8', NULL, 'wwfSpain', 'wwfSpain', 'info@wwf.es', '0000-00-00', 'img/panda.png', '', 913540578, 'User'),
-('000000001', 'Cruz Roja', '', 'Avenida Reina Victoria, 26', NULL, 'CruzRoja', 'CruzRojaEspaña', 'informa@cruzroja.es', '0000-00-00', 'img/layout_set_logo.png', '', 902222292, 'User'),
-('000000002', 'Save the Children', '', 'Calle Doctor Esquerdo, 138', NULL, 'SaveTheChildren', 'savethechildrenSpain', 'online@savethechildren.es', '0000-00-00', 'img/STC.png', '', 915130500, 'User'),
-('000000003', 'Aldeas Infantiles', '', 'Calle Angelita Cavero, 9', NULL, 'AldeasInfantiles', 'aldeasInfantSpain', 'mpardal@aldeasinfantiles.es', '0000-00-00', 'img/Logo_AldeasInfantilesSOS.jpg', '', 902332222, 'User'),
-('000000004', 'Amnistia Internacion', '', 'Fernando VI, 8', NULL, 'AmnistiaInterSpain', 'amnistiaInterSpain', 'info@es.amnesty.org', '0000-00-00', 'img/Logo Amnistía Internacional_2.jpg', '', 913101277, 'User'),
-('000000005', 'Caritas', '', 'San Bernardo, 99', NULL, 'CaritasEspaña', 'caritasEspaña', 'correo@caritas.es', '0000-00-00', 'img/09e48e4c.jpg', '', 914441000, 'User'),
-('01234567A', 'pepe', 'pepe', 'c/holacaracola nÂº1', 12345, 'pepe', 'pepe', 'pepe@pepe.com', '1978-03-12', '', 'Masculino', 123456789, 'User'),
-('123456789', 'nuevo', '', 'c/Juan de la Rosa, 1', NULL, 'newuser', 'hoola', 'prueba@prueba.com', '0000-00-00', NULL, '', 98765432, 'User'),
-('3456789', 'dewfew', '', 'fregteh', NULL, 'wwfAdmin', 'holita', 'gregre@fegre,com', '0000-00-00', NULL, '', 987654321, 'User');
+('05448383M', 'Juan', 'Montiel', '', 0, 'admin2', '$2y$11$tu0h.LCowz7qMnL19T9yBe02h3aZFPRgDvdlqcOKRPaVYQ6y3.fkq', 'juanjo@ucm.es', '2016-06-15', 'img/usuarioSF.png', 'Masculino', 0, 'Admin'),
+('45731661W', 'Juan Jose', 'Montiel', '', 0, 'juan', '$2y$11$oU/pEgps2n/nQkFWZY4HVeHXOiIWUbrypqlnr5zPscEU2EQj.lm4q', 'juanjo@gmail.com', '1993-06-23', 'img/usuarioSF.png', 'Masculino', 0, 'User'),
+('45731662A', 'Silvia', 'Lendinez', '', 0, 'silvia', '$2y$11$PXu7CABYlgTXuf7SUCQBFusI/w50J0Z2pODD/Vl2rZBiBhhqCE7/2', 'silvialendinez@hotmail.com', '1992-10-15', 'img/adminNerea.jpg', 'Femenino', 0, 'User'),
+('45731663G', 'Maria', 'Ruiz', '', 0, 'Maria', '$2y$11$yDnmx2eYOlhXcujsVCkpI..ODedfMnka8Uv/D4GhBP588yvxN/z3W', 'mariaruiz@ucm.es', '1993-06-17', 'img/imgSecundaria2.jpeg', 'Femenino', 0, 'User'),
+('45731664M', 'Nerea', 'Gomez', 'gran via', 0, 'admin1', '$2y$11$QUlDMjuyaIqXxqhiabA6iu9/a/plrxhv9G8w0lTjNj28EASzVhqsu', 'nereagomez95@hotmail.com', '1995-03-27', 'img/adminNerea.jpg', 'Femenino', 0, 'Admin'),
+('50551761S', 'Jorge', 'Gomez', '', 0, 'jorge', '$2y$11$ZAozUgJrJ6R0xHQp0Q2HROXqYjun9B.n2t7f83nkupwrUVW9OZ68K', 'jorgegomez@ucm.es', '1991-02-10', 'img/perfil.png', 'Masculino', 0, 'User'),
+('50551762Q', 'Monica', 'Gonzalez', '', 0, 'monica', '$2y$11$w.iEhsWJIzBKX0SZfXJ0COwDF5QIgcrFx.QOWwaUS3P9QFmA95gP.', 'monica@ucm.es', '1995-06-14', 'img/adminNerea.jpg', 'Femenino', 0, 'User'),
+('72894735F', 'Miriam', 'Ruiz', '', 0, 'miriam', '$2y$11$sAm7ECh4fN3c9ZUh1.rTzutjo9Lc.bTuiD/24FTUkCsFr6sqMU14u', 'miriam@ucm.es', '1997-06-11', 'img/adminNerea.jpg', 'Femenino', 0, 'User'),
+('73422420A', 'Nerea', 'Gomez', '', 0, 'nerea', '$2y$11$s/71Td4Dc.VrJJHP6Zw2B.mp01EJrMp8HxITnUbF/uGIVzlBwMfne', 'nereagomez958@hotmail.com', '1992-03-27', 'img/adminNerea.jpg', 'Femenino', 0, 'User');
 
 -- --------------------------------------------------------
 
@@ -240,6 +244,45 @@ CREATE TABLE `voluntarios` (
   `horaEntrada` int(4) NOT NULL,
   `horaSalida` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `voluntarios`
+--
+
+INSERT INTO `voluntarios` (`idVoluntariado`, `idProyecto`, `DNIUsuario`, `dia`, `horaEntrada`, `horaSalida`) VALUES
+(21, 42, '73422420A', '2016-06-30', 18, 21),
+(22, 42, '73422420A', '2016-07-21', 15, 18),
+(23, 42, '73422420A', '2016-08-18', 17, 21),
+(24, 45, '73422420A', '2016-07-24', 14, 16),
+(25, 45, '73422420A', '2016-08-26', 14, 16),
+(26, 45, '73422420A', '2016-09-22', 14, 16),
+(27, 50, '45731662A', '2016-07-22', 16, 19),
+(28, 50, '45731662A', '2016-08-17', 16, 19),
+(29, 50, '45731662A', '2016-08-31', 16, 19),
+(30, 50, '45731662A', '2016-09-22', 16, 19),
+(31, 43, '45731661W', '2016-07-15', 19, 21),
+(32, 43, '45731661W', '2016-09-22', 19, 21),
+(33, 43, '45731661W', '2016-09-16', 19, 21),
+(34, 43, '45731661W', '2016-09-29', 19, 21),
+(35, 45, '45731661W', '2016-07-22', 15, 16),
+(36, 45, '45731661W', '2016-07-29', 15, 16),
+(37, 45, '45731661W', '2016-07-31', 15, 16),
+(38, 43, '50551762Q', '2016-06-30', 14, 15),
+(39, 43, '50551762Q', '2016-07-23', 14, 15),
+(40, 43, '50551762Q', '2016-07-30', 14, 15),
+(41, 43, '50551762Q', '2016-07-27', 14, 15),
+(42, 48, '50551762Q', '2016-06-30', 12, 15),
+(43, 48, '50551762Q', '2016-07-16', 12, 15),
+(44, 48, '50551762Q', '2016-07-19', 12, 15),
+(45, 48, '50551762Q', '2016-07-26', 12, 15),
+(46, 48, '50551762Q', '2016-07-29', 12, 15),
+(47, 47, '72894735F', '2016-06-29', 15, 19),
+(48, 47, '72894735F', '2016-07-23', 15, 19),
+(49, 47, '72894735F', '2016-07-27', 15, 19),
+(50, 47, '72894735F', '2016-07-30', 15, 19),
+(51, 48, '50551761S', '2016-06-29', 18, 21),
+(52, 48, '50551761S', '2016-07-21', 18, 21),
+(53, 48, '50551761S', '2016-07-28', 18, 21);
 
 --
 -- Índices para tablas volcadas
@@ -314,27 +357,27 @@ ALTER TABLE `voluntarios`
 -- AUTO_INCREMENT de la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
-  MODIFY `donaciones_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `donaciones_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProducto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `proyecto`
 --
 ALTER TABLE `proyecto`
-  MODIFY `idProyecto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idProyecto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT de la tabla `voluntarios`
 --
 ALTER TABLE `voluntarios`
-  MODIFY `idVoluntariado` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `idVoluntariado` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
 -- Restricciones para tablas volcadas
 --

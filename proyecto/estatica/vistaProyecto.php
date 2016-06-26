@@ -13,13 +13,12 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-			<div id="proyectoONG">
+			
 				<?php
 					require_once "includes/ViewScripts/ProyectosVista.php";
 					$vista = new vistaProyectos();
 					$vista->muestraProyecto($_GET['id']);
 				?>	
-			</div>
 			
 		</div>
 			

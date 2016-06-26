@@ -14,7 +14,11 @@
 		<!--CONTENIDO-->
 
 			<div class="contenido">
-				
+				<?php
+						use \AW\proyecto\estatica\includes\Aplicacion as App;
+						$app = App::getSingleton();
+						if(!$app->usuarioLogueado()){
+					?>
 				<div class="formulario">
 					
 					<form action="includes/formLogin.php" method="POST">
@@ -33,6 +37,9 @@
 				<div class="imagen">
 					<img src="img/nuevologo.png">
 				</div>
+				<?php
+					}
+				?>
 				
 		</div>
 	</body>
