@@ -16,6 +16,7 @@
 			<div id="proyectoONG">
 				<?php
 					require_once "includes/ViewScripts/DonacionesVista.php";
+					
 					$v = new vistaDonaciones();
 					$v->muestraInsertarDonacion($_POST['idProyect'], $_POST['cantidad']);
 				?>
