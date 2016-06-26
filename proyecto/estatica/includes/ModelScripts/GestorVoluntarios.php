@@ -20,6 +20,7 @@
 		}
 
 		public function getSumHorasVoluntariado($dniUsuario){
+			$dniUsuario = htmlspecialchars(trim(strip_tags($dniUsuario)));
 			$lista = $this->dao->sumHorasVoluntario($dniUsuario);
 			$sum = 0;
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){
@@ -29,21 +30,27 @@
 		}
 		public function nuevoVoluntariado($idProyecto,$dniUsuario,$dia,$horaEntrada,$horaSalida){
 			$daoU = new DaoUsuarios();
-			//if($daoU->seleccionaUsuario($dniUsuario) != null){
+			$idProyecto = htmlspecialchars(trim(strip_tags($idProyecto)));
+			$dniUsuario = htmlspecialchars(trim(strip_tags($dniUsuario)));
+			$dia = htmlspecialchars(trim(strip_tags($dia)));
+			$horaEntrada = htmlspecialchars(trim(strip_tags($horaEntrada)));
+			$horaSalida = htmlspecialchars(trim(strip_tags($horaSalida)));
+			if($daoU->seleccionaUsuario($dniUsuario) != ""){
 				$this->daoP->restaVoluntarios($idProyecto, 1);
 				return ($this->dao->insertaVoluntario($idProyecto,$dniUsuario,$dia,$horaEntrada,$horaSalida));
-			//}
+			}
 
 			return null;
 		}
 
 		public function eliminaVoluntario($idVol){
+			$idVol = htmlspecialchars(trim(strip_tags($idVol)));
 			return ($this->dao->borraVoluntario($idVol));
 		}
 
 		public function getVoluntarios($idProyecto){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
-			htmlspecialchars(trim(strip_tags($idProyecto)));
+			$idProyecto = htmlspecialchars(trim(strip_tags($idProyecto)));
 			$lista = $this->dao->seleccionaVoluntarios($idProyecto);
 			$array = new ArrayObject();
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){
@@ -54,7 +61,7 @@
 
 		public function getVoluntariosPorONG($cifOng){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
-			htmlspecialchars(trim(strip_tags($cifOng)));
+			$cifOng = htmlspecialchars(trim(strip_tags($cifOng)));
 			$lista  = $this->dao->seleccionaVoluntariosONG($cifOng);
 			$array = new ArrayObject();
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){
@@ -65,7 +72,7 @@
 
 		public function getVoluntariosPorDNI($dni){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
-			htmlspecialchars(trim(strip_tags($dni)));
+			$dni = htmlspecialchars(trim(strip_tags($dni)));
 			$lista = $this->dao->seleccionaVoluntariosUsuario($dni);
 			$array = new ArrayObject();
 			for($j= 0; $j <sizeof($lista)-1 ; $j++){

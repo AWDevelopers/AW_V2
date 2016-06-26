@@ -19,26 +19,26 @@
 
 		public function getProyecto($id){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
-			htmlspecialchars(trim(strip_tags($id)));
+			$id = htmlspecialchars(trim(strip_tags($id)));
 			return ($this->dao->seleccionaProyecto($id));
 		}
 
 		public function eliminarProyecto($id){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
-			htmlspecialchars(trim(strip_tags($id)));
+			$id =htmlspecialchars(trim(strip_tags($id)));
 			return ($this->dao->borraProyecto($id));
 		}
 
 		public function modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin){
 			 //$this->retiraEtiquetas($id); //LIMPIAMOS DE ETIQUETAS HTMLS Y PHP */
-			htmlspecialchars(trim(strip_tags($id)));
-			htmlspecialchars(trim(strip_tags($nombre)));
-			htmlspecialchars(trim(strip_tags($dineroNecesario)));
-			htmlspecialchars(trim(strip_tags($descripcionCorta)));
-			htmlspecialchars(trim(strip_tags($descripcionLarga)));
-			htmlspecialchars(trim(strip_tags($imagen)));
-			htmlspecialchars(trim(strip_tags($numVoluntarios)));
-			htmlspecialchars(trim(strip_tags($fechaFin)));
+			$id = htmlspecialchars(trim(strip_tags($id)));
+			$nombre = htmlspecialchars(trim(strip_tags($nombre)));
+			$dineroNecesario=htmlspecialchars(trim(strip_tags($dineroNecesario)));
+			$descripcionCorta= htmlspecialchars(trim(strip_tags($descripcionCorta)));
+			$descripcionLarga = htmlspecialchars(trim(strip_tags($descripcionLarga)));
+			$imagen = htmlspecialchars(trim(strip_tags($imagen)));
+			$numVoluntarios = htmlspecialchars(trim(strip_tags($numVoluntarios)));
+			$fechaFin = htmlspecialchars(trim(strip_tags($fechaFin)));
 			return ($this->dao->modificaProyecto($id, $nombre,$dineroNecesario,$descripcionCorta,$descripcionLarga,$imagen,$numVoluntarios,$fechaFin));
 		}
 		/*private function retiraEtiquetas(&$columns) {

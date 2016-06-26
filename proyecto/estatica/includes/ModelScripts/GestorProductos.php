@@ -7,6 +7,7 @@
 		}
 
 		public function cargarNombreONG($CIFOng){
+			$CIFOng = htmlspecialchars(trim(strip_tags($CIFOng)));
 			require_once 'includes/DaoScripts/DaoOngs.php';
 			$daoOng = new DaoOngs();
 			$ONG = $daoOng->seleccionaOng($CIFOng);
@@ -49,11 +50,13 @@
 		}
 		
 		public function getProducto($id){
+			$id = htmlspecialchars(trim(strip_tags($id)));
 			return ($this->dao->cargaProducto($id));
 		}
 
 	
 		public function borrarProducto($id){
+			$id = htmlspecialchars(trim(strip_tags($id)));
 			$this->dao->borrarProducto($id);
 		}
 
