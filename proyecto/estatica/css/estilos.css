@@ -468,6 +468,7 @@ button {
 
 
 #horas{
+	align-content: center;
 	height: 320px;
 	width: 30%;
 	margin-left: 4%;
@@ -498,7 +499,7 @@ button {
 }
 
 #pieCalendario {
-	float:left;
+	
 
 }
 
