@@ -13,10 +13,6 @@
 		
 		<!--Aqui va el contenido-->
 		<div class="contenido">
-<<<<<<< HEAD
-			
-=======
->>>>>>> 307ba084636e733380295c68431aa7b23efaa255
 				<?php
 					require_once "includes/ViewScripts/ProyectosVista.php";
 					$vista = new vistaProyectos();
